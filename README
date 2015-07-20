@@ -1,0 +1,2 @@
+Compile with latexmk
+    latexmk -pdf -pvc -f --interaction=nonstopmode thesis
