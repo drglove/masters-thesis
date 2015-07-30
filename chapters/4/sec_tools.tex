@@ -1,8 +1,9 @@
 \section{Event Generation}
 
-Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{Mertig:1990an}, and \madgraph \cite{Alwall:2014hca}.
+Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{Mertig:1990an}, and \mgamcnlo \cite{Alwall:2014hca}.
 \feynrules allows one to easily write down a Lagrangian, and generate the Feynman rules dynamically.
 For our purposes, the Feynman rules are easily seen directly from the Lagrangian.
 However, the advantage of using \feynrules is that the output follows the Universal FeynRules Output (UFO) \cite{Degrande:2011ua}, and defining the model involves only writing some rather simple \mathematica code.
 UFO defines a portable format for a model, allowing multiple event generators to utilize its output.
 Most important is that \madgraph can utilize the resulting model simply by putting the UFO model within the appropriate location within \madgraph.
+\feyncalc is useful when assisting computations by hand, which is ultimately used for computing traces of many $\gamma$ matrices.
