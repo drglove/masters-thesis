@@ -1,5 +1,6 @@
 # Latex files
- 
+
+mainthesisUVIC.tex
 *.aux
 *.glo
 *.idx
