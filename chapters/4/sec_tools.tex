@@ -20,5 +20,11 @@ There are other tools that could further improve our limits which were not used:
 \subsection{\feynrules}
 \feynrules was developed as a toolkit to define new fields, write down a given model's Lagrangian, and automatically compute the Feynman rules.
 The only requirements of the model are that the Lagrangian satisfy locality, Lorentz, and Gauge invariance, and allowable fields have spin 0, 1/2, 1, 3/2, or 2. The Lagrangian need not be an extension of the Standard Model, but simply any quantum field theory obeying the above requirements. 
-It also will compute simple decay widths for $1 \rightarrow 2$ processes, and branching ratios.
+It also will analytically compute simple decay widths for $1 \rightarrow 2$ processes, and branching ratios.
 This toolkit works as a \mathematica package.
+
+Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields, and request the Feynman rules be calculated and output to the UFO format, with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the Standard Model Lagrangian already, so we simply need to append our new Lagrangian to this buitin one.
+At the same time, we have \feynrules calculate the decay widths of each new particle, and update the model file with these using the calls to \texttt{vertices = FeynmanRules[L]}, \texttt{decays = ComputeWidths[vertices]}, and \texttt{UpdateWidths[decays]}.
+
+Our model files for both the scalar and dark photon models are included in the appendix. \improvement[inline]{include fr in appendix}
+
