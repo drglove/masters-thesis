@@ -11,6 +11,14 @@ Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{M
 \feynrules allows one to easily write down a Lagrangian, and generate the Feynman rules dynamically.
 For our purposes, the Feynman rules are easily seen directly from the Lagrangian.
 However, the advantage of using \feynrules is that the output follows the Universal FeynRules Output (UFO) \cite{Degrande:2011ua}, and defining the model involves only writing some rather simple \mathematica code.
-UFO defines a portable format for a model, allowing multiple event generators to utilize its output.
+The UFO defines a portable format for a model, allowing multiple event generators to utilize its output.
 Most important is that \madgraph can utilize the resulting model simply by putting the UFO model within the appropriate location within \madgraph.
 \feyncalc is useful when assisting computations by hand, which is ultimately used for computing traces of many $\gamma$ matrices.
+
+There are other tools that could further improve our limits which were not used: these include \pythia \cite{Sjostrand:2007gs}, which would handle the hard event generation instead of the generator provided by \madgraph, hadronization (which is not likely to be of use)\improvement{why not?}, initial and final state radion; and \delphes \cite{Selvaggi:2014mya}, providing a proper detector simulation at a level that is not as demanding as \geant \cite{Agostinelli}. For our purposes of simply estimating limits, these are for the most part not necessary.
+
+\subsection{\feynrules}
+\feynrules was developed as a toolkit to define new fields, write down a given model's Lagrangian, and automatically compute the Feynman rules.
+The only requirements of the model are that the Lagrangian satisfy locality, Lorentz, and Gauge invariance, and allowable fields have spin 0, 1/2, 1, 3/2, or 2. The Lagrangian need not be an extension of the Standard Model, but simply any quantum field theory obeying the above requirements. 
+It also will compute simple decay widths for $1 \rightarrow 2$ processes, and branching ratios.
+This toolkit works as a \mathematica package.

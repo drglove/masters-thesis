@@ -1,6 +1,7 @@
 \section{Models}
 
-Our primary model of interest is the addition of a scalar, $\phi$, with a weak coupling to leptons.
+Keeping in mind that the discrepancy of the proton-charge radius is about $4\%$, we must be interested in small couplings \cite{Carlson:2015jba}.
+Our primary model of interest is the addition of a scalar, $\phi$, with a weak, asymmetric coupling to leptons violating lepton universality.
 We are also interested in the dark photon model, as it provides a similar low mass mediator that is weakly coupled to leptons.
 In the dark photon model, this is instead a vector as opposed to a scalar.
  \improvement{Add more general model requirements}
@@ -11,15 +12,20 @@ We add a real scalar with Yukawa couplings to the three generations of mass, and
 The full Lagrangian is given in below, equation \ref{eqn:scalar_lagrangian}: \unsure{below?} 
 \begin{equation}
 \label{eqn:scalar_lagrangian}
-\Lagr = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m_\phi^2 \phi^2 + \sum_{\ell=e,\mu,\tau} g_{\phi \ell}\bar{\ell}^\lambda \ell^\lambda \phi + \Lagr_{\textrm{SM}}
+\Lagr = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m_\phi^2 \phi^2 + \sum_{\ell=e,\mu,\tau} g_{\phi \ell}~\bar{\ell}^\lambda~\phi~\ell^\lambda + g_{\phi p}~\bar{p}~\phi~p + \Lagr_{\textrm{SM}}
 % g_{\phi e}\bar{e}^\lambda e^\lambda \phi
 \end{equation}\unsure{Sum over leptons?} 
-where the couplings in $g_{\phi \ell}$ are the couplings between the scalar and the corresponding lepton, $\Lagr_\textrm{SM}$ is the Standard Model Lagrangian, $\lambda$ indicates spinor indices, and $g_{\phi \ell} \sim m_\ell$.
+where $\ell$ takes on the lepton fields, the couplings in $g_{\phi \ell}$ are the couplings between the scalar and the corresponding lepton, $p$ is the proton field, $g_{\phi p}$ is the coupling between the scalar and the proton, $\Lagr_\textrm{SM}$ is the Standard Model Lagrangian, $\lambda$ indicates spinor indices, and $g_{\phi \ell} \propto m_\ell$.
 We usually fix the coupling to the $\mu$ in this thesis, however we will also fix the coupling to the $\tau$ in one portion so it is convenient to write the couplings as:
 \begin{equation*}
 \label{eqn:coupling_mass}
-g_{\phi \ell} = \left(g_{\phi e}, g_{\phi \mu}, g_{\phi \tau}\right) = g_{\phi \mu} \left( \frac{m_e}{m_\mu}, 1, \frac{m_\tau}{m_\mu} \right)
-\end{equation}
+g_{\phi \ell} = \left(g_{\phi e}, g_{\phi \mu}, g_{\phi \tau}\right) = g_{\phi \mu} \left( \frac{m_e}{m_\mu}, 1, \frac{m_\tau}{m_\mu} \right) = g_{\phi \tau} \left( \frac{m_e}{m_\tau}, \frac{m_\mu}{m_\tau}, 1 \right)
+\end{equation*}
+
+Of most importance is the relative magnitude of couplings. We would like a weak coupling to electrons such that we do not disturb the proton radius as extracted in the electron-proton scattering experiments, and measurement of the atomic energy levels of electronic Hydrogen.
+Indeed the point here is to have a stronger coupling to the muon with the scalar, than that of the electron with the scalar. Taking the couplings to be Higgs-like gives the size of any physical effect to be approximately some power of $(m_\mu/m_e) \approx 210$ times larger for the muon than to the electron. Going to higher mass scales allows easier probing with this model. If one is able to access the $\tau$ lepton, the coupling becomes large enough for a deviation to be seen; in particular, a resonance at the mass of the scalar mediator.
+
+It is also possible to allow for a pseudo-scalar coupling to be introduced, by introducing another set of couplings to the pseudo-scalar field and sandwiching an $i\gamma^5$ between spinors. While it is outside the scope of this thesis to examine this, we will note here that the scalar and pseudo-scalar have corrections to the $(g-2)_\mu$ with opposing signs. For small masses of the mediator however, the degree of fine tuning required is large enough that we can ignore the pseudo-scalar case if desired, as the correction from the scalar case alone is small enough to give a desirable $(g-2)_\mu$ correction. This is given in more detail in \cite{Carlson:2015jba}.\improvement{add plot from Carlson fig. 11}\unsure{does the same thing happen for proton radius?}
 
 \subsection{Dark Photon}
 
