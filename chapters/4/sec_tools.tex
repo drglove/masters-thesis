@@ -30,3 +30,16 @@ Our model files for both the scalar and dark photon models are included in the a
 
 \subsection{\feyncalc}
 Only used minimally in this thesis, \feyncalc provides a quick sanity check for calculations done by hand.
+We have used \feyncalc in our calculation of $K^+$ decay with new physics, although this channel is doable by hand.
+It is useful in two senses. Primarily, it computes the traces of many $\gamma$ matrices.
+For our purposes, a trace of only up to 6 $\gamma$ matrices appeared (both with and without a $\gamma^5$ component).
+However, one can also start from the amplitude as written with spinors, and \feyncalc can automatically write down the spin-averaged amplitude after taking the traces.
+
+\subsection{\madgraph}
+\madgraph is the largest component and most used tool of this thesis.
+It provides the framework for:
+\begin{itemize}
+    \item Importing both SM, and new physics models as provided by tools such as \feynrules in the UFO format
+    \item Defining processes of interest, such as $e^+ e^- \rightarrow \mu^+ \mu^- \mu^+ \mu^-$
+    \item Generating events by sampling the amplitude using a Monte-Carlo technique
+\end{itemize}
