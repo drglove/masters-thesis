@@ -12,7 +12,7 @@ We add a real scalar with Yukawa couplings to the three generations of mass, and
 This obviously requires picking a mass scale for the coupling, one of two free parameters of the theory.
 The other free parameter is, as usual, the mass of the new particle.
 Choosing the coupling to scale proportionally to the mass may give a natural way to couple the new scalar more strongly to the $\mu$ than the $e$.
-The full Lagrangian is given in below, equation \ref{eqn:scalar_lagrangian}: \unsure{below?} 
+The full Lagrangian is given below in, equation \ref{eqn:scalar_lagrangian}: \unsure{below vs in?} 
 \begin{equation}
 \label{eqn:scalar_lagrangian}
 \Lagr = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m_\phi^2 \phi^2 + \sum_{\ell=e,\mu,\tau} g_{\phi \ell}~\bar{\ell}^\lambda~\phi~\ell^\lambda + g_{\phi p}~\bar{p}~\phi~p + \Lagr_{\textrm{SM}}
@@ -38,5 +38,24 @@ For small masses of the mediator however, the degree of fine tuning required is 
 This is given in more detail in \cite{Carlson:2015jba}.\improvement{add plot from Carlson fig. 11}\unsure{does the same thing happen for proton radius?}
 
 \subsection{Dark Photon}
+The dark photon model adds a new $U(1)'$ force where the mediator now carries a mass.
+Giving the dark photon, known as the $A'$ (or alternatively the $V$), a kinetic mixing with the photon, allows it to couple to charged particles with a strength depending on the mixing strength.
+This model has been thoroughly examined in the literature as a potential dark matter candidate, and is a fairly general extension to the SM \cite{Holdom:1985ag}.
+It also has potential to solve the $(g-2)_\mu$ problem \cite{Pospelov:2008zw}, however, more recently the parameter space has effectively closed off the dark photon as a solution to $(g-2)_\mu$ \cite{Batley:2015lha}.
 
+The full Lagrangian is given below in equation \ref{eqn:darkphoton_lagrangian}:
+\begin{equation}
+\label{eqn:darkphoton_lagrangian}
+\Lagr = -\frac{1}{4}F'^2_{\mu\nu} + \frac{1}{2}m_{A'}^2 A'^2_\mu - \frac{\epsilon}{2}F'_{\mu\nu} F^{\mu\nu} + \Lagr_{\textrm{SM}}
+\end{equation}
+Here $F'_{\mu\nu} \equiv \partial_\mu A'_\nu - \partial_\nu A'_\mu$ is the field strength tensor corresponding to the dark photon vector field $A'_\mu$, $F_{\mu\nu}$ is the typical QED electromagnetic field strength tensor, $m_{A'}$ is the corresponding dark photon mass, and $\epsilon$ is the kinetic mixing strength.
+The mass term appearing here actually could be inserted from a new Higgs field breaking the $U(1)'$ symmetry, and the QED field strength tensor replaced with the $F^Y_{\mu\nu}$ tensor from the SM $U(1)^Y$ electroweak group.
+From a phenomenological point of view, it is sufficient to leave the mass term as it appears for our purposes.
 
+After integrating the kinetic mixing term appearing in the Lagrangian by parts, the coupling to charged leptons (and quarks) becomes apparent as:
+\begin{equation}
+    \label{eqn:darkphoton_qed_current}
+    \Lagr \supset \epsilon A'_\mu J^\mu_{EM}
+\end{equation}
+where $J^\mu_{EM} \equiv e \overbar{\psi} \gamma^\mu \psi$ is the electromagnetic current.
+We then have a coupling between fermions and the dark photon with strength $\epsilon e$, i.e. it looks just like the typical QED coupling but suppressed by a factor of $\epsilon$.
