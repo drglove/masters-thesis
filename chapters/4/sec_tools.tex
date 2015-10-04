@@ -41,6 +41,7 @@ It provides the framework for:
 \begin{itemize}
     \item Importing both the SM, and new physics models as provided by tools such as \feynrules in the UFO format
     \item Defining processes of interest, such as $e^+ e^- \rightarrow \mu^+ \mu^- \mu^+ \mu^-$
+    \item Producing Feynman diagrams for the process automatically using the Feynman rules defined by the model
     \item Generating events by sampling the amplitude using a Monte-Carlo technique
 \end{itemize}
 
@@ -55,8 +56,27 @@ Note that it is possible to extend Dalitz plots to four-body decays, but this is
 In our work, partial decay widths calculated by \madgraph are used for corrections to the $\mu^+$ decay at the Mu3e experiment.
 While it would be possible to leverage \madgraph for calculations of the new physics component to the $K^\pm$ decay, we are only interested in the three-body decay where it is possible to do this analytically.
 
+As is the case with any Feynman diagram calculation, any width or cross-section computation must include all relevant Feynman diagrams.
+\madgraph automatically will generate these given the Feynman rules defined, taking into account restrictions placed by the user, such as restricting a certain particle to be produced on-shell before decaying.
+Diagrams are generated efficienctly by recursively merging sub-diagrams.
+Production of Feynman diagrams starts by treating all incoming particles as outgoing antiparticles.
+This simplifies the diagram generation and is easy to reverse as a final step.
+Next, all particles are grouped, with the maximum group size being the maximum degree of interaction, and replacing each group with its resulting particle if applicable, else it is discarded.
+Generation halts when at most two external particles remain, corresponding to the requirement that the particles must interact.
+This process results in all Feynman diagrams being produced that are allowed, by descending down through the tree of allowed diagrams and pruning branches early if they will not lead to the final state desired.
+A user can also request the maximum degree of interaction allowed.
+For example, we could require $QED=0$ to allow only QCD interactions in the diagrams.
+
+Once diagrams are generated, the amplitudes must be written down.
+This is done using helicity amplitudes.
+\madgraph passes this work off to an external library, either \helas \cite{Murayama:1992gi} or \aloha \cite{deAquino:2011ub}.
+Each external leg gets assigned a wavefunction, and is combined using the appropriate propagator until the final combination step gives the resulting helicity amplitude for that particular diagram.
+This also allows efficient generation as common sub-processes within a diagram can be reused across all Feynman diagrams.
+
+Finally, the Monte-Carlo integration takes place, where the objective is to integrate the square of each combination of helicity amplitudes.
 \madgraph is composed of a few distinct tools, the most important of which is \madevent.
 \madevent is one of a few programs included in \madgraph which can sample a generated amplitude using Monte-Carlo.
+Other Monte-Carlo integrators could be used instead, such as \pythia, however \madevent comes bundled with \madgraph.
 The parameters that one can tune for the generation of events falls under two files, labelled cards: \texttt{param\_card}, and \texttt{run\_card}.
 The \texttt{param\_card} controls physics parameters, such as the mass of various particles, and their couplings, both for the SM and any new physics models.
 \texttt{run\_card} controls parameters related to the experiment, such as the energies of the particles being collided, which parton distribution functions to use if needed, and any relevant cuts to make at generation time, among other options.
