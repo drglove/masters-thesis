@@ -1,0 +1,40 @@
+M$ModelName = "scalar";
+
+M$Information = { Authors      -> { "N. Lange" },
+                  Version      -> "1.3",
+                  Date         -> "May 27, 2015",
+                  Institutions -> { "University of Victoria" },
+                  Emails       -> { "nlange@uvic.ca" }
+                };
+
+M$ClassesDescription = {
+    S[100] == {
+        ClassName        -> phi,
+        SelfConjugate    -> True,
+        Mass             -> { Mphi, 1 },
+        Width            -> { Wphi, 1 },
+        PropagatorLabel  -> "phi",
+        PropagatorType   -> D,
+        PropagatorArrow  -> None,
+        ParticleName     -> "phi",
+        FullName         -> "Dark Scalar"
+    }
+};
+
+M$Parameters = {
+    gst == { ParameterType    -> External,
+             Value            -> 1,
+             InteractionOrder -> { NP, 1 }
+    },
+
+    gsm == { ParameterType    -> Internal,
+             Value            -> gst*MMU/MTA,
+             InteractionOrder -> { NP, 1 }
+    },
+
+    gse == { ParameterType    -> Internal,
+             Value            -> gst*Me/MTA,
+             InteractionOrder -> { NP, 1 }
+    }
+};
+
