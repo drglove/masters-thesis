@@ -38,3 +38,60 @@ $\mu~Au\rightarrow e~Au$ & \sindrumii & $< 7\times 10^{-13}$ \\ \hline
 Note that all of these upper limits are on the order of $10^{-10} - 10^{-13}$.
 Any future experiments must examining these decay modes must be sensitive to branching ratios at least as small as the upper limits here.
 For this reason, \mueee is attempting to reach branching ratios down to $10^{-16}$ for the $\mu \rightarrow eee$ process.
+To reach such a low branching ratio, at least $5.5 \times 10^{16}$ muon decays must be observed, if one assumes a total efficiency of $30\%$.
+
+Given that this many muon decays are possible, the muon beam will be placed onto a aluminium target to stop the muons.
+The decay products of the muons are then tracked with the detector.
+A schematic of the target with the muon beam in shown in Fig. \ref{fig:mu3e_target}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \textwidth]{Figures/experiments/mu3e_target.png}
+    \caption{Schematic of a muon decay in the full \mueee detector \cite{Blondel:2013ia}.}
+    \label{fig:mu3e_target}
+\end{figure}
+
+In order to achieve such a low sensitivity, and for practical purposes of building and commissioning the detector, \mueee plans to run in two distinct phases of operation.
+The differences between these two phases lies primarily in the differences between the beam lines, which will be discussed below.
+However, there are also planned additions/modifications to the detector.
+
+\subsection{Phase I}
+The first phase will aim for a branching ratio sensitivity of $10^{-15}$.
+PSI currently produces muons at a rate that \mueee can take advantage of for the first phase, without modifications, and can additionally serve as a commissioning time.
+To produce the muons used, phase I will use the existing $\pi\textrm{E5}$ beam line.
+This is done by colliding protons on target to produce pions, proceeding by the strong interaction in equation \ref{eqn:pion_production}.
+
+\begin{equation}
+\label{eqn:pion_production}
+p^+ + p^+ \rightarrow p^+ + n + \pi^+
+\end{equation}
+
+\noindent Note that this is process is independent of the target $Z$, since the interaction takes place direclty between the proton beam and a single proton on target.
+However, a carbon target is chosen due to, among other reasons, good heat disappation and the high density allows for a compact target with good pion production per unit volume of target.
+For production to be possible, the excess centre of mass energy must be at least as large as the pion mass, giving a threshold energy of $290\textrm{MeV}$ for the proton beam.
+To get a reasonable yield of pions, a $590\textrm{MeV}$ proton beam is used, producing low energy ($10-120\textrm{MeV}$) pions.
+A beam current of $2.3\textrm{mA}$ will be used.
+
+Pions that have stopped near the surface of the target, give rise to surface muons, where the pion decays through the weak force to muons as shown in equation \ref{eqn:muon_production}.
+
+\begin{equation}
+\label{eqn:muon_production}
+\pi^+ \rightarrow \mu^+ + \nu_\mu
+\end{equation}
+
+\noindent The pions have incredibly short lifetimes, $2.6 \times 10^{-8}s$, and the branching ratio of this process is very large, $\textrm{BR}(\pi^+ \rightarrow \mu^+ + \nu_\mu) = 99.98770\%$ \cite{Agashe:2014kda}.
+One does not have to wait long then to have a good source of surface muons.
+Since the pions decaying are at rest, and the muon has a mass very close to that of the pion, the muons are produced with momenta of $28\textrm{MeV}$.
+These are easy collimate and provide a very monochromatic beam of muons, since only $10\%$ of the surface muons can be used from an angular selection.
+The collimated beam of positively charged muons is then directed to a target within a solenoidal magnetic field at a rate of $2 \times 10^8 \mu^+/s$.
+A schematic of the beam line that produces the muon beam is shown in Fig. \ref{fig:mueee_phaseI_schematic}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \textwidth]{Figures/experiments/mu3e_phase1_schematic.png}
+    \caption{\mueee phase I beam line schematic using the $\pi\textrm{E5}$ at PSI, from \cite{Blondel:2013ia}.}
+    \label{fig:mueee_phaseI_schematic}
+\end{figure}
+
+An expected number of $10^{15}$ muon decays can be expected during this phase.
+During this time, the detector is relatively minimal compared to the full run planned, and curently is using a pixel-only detector.
