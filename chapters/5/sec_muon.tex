@@ -1,10 +1,17 @@
 \section{Limits on \mueee from Muon Decays}
 In section \ref{sec:mu3e_experiment}, we saw how the production rate of $\mu^+$ at \mueee could be brought to the level of muon decays occuring at a rate $\order(10^9) \mu^+/s$.
 The signal for the \mueee experiment, $\mu^+ \rightarrow e^+ e^+ e^-$, contains no missing energy as there are no neutrinos in the final state.
-Since the experiment is looking at a muon beam, it can be expected that there will be many events that behave like a muon decay and have missing energy.
 The SM has many avenues to produce such a signal with missing energy through muon decay, and we will go through the relevant backgrounds to our limits here.
+Since the experiment is looking at a muon beam, it can be expected that there will be many events that behave like a muon decay and have missing energy.
+Our signal will overlap with the backgrounds present and \mueee, and will allow us to study the signal component of $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$.
+
+For this experiment, we have utilized \madgraph to do the final state integration, as our signal will have four particles in the final state, and this is difficult to do by hand.
+Furthermore, even though we will be looking at a four body decay, the scalar particle will be on-shell and decay later to an $e^+ e^-$ pair, and \madgraph will also take care of generating the events corresponding to this decay.
+All of the diagrams that \madgraph generates are available in appendix \ref{app:muon_diagrams}.
 
 \subsection{Backgrounds}
+Here we will discuss the relevant backgrounds to the experiment and their initial implications on their effects on our limits.
+
 A strong irreducible background for the experiment is
 
 \begin{equation}
