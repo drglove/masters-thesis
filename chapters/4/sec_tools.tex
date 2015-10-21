@@ -26,7 +26,7 @@ This toolkit works as a \mathematica package.
 Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields, and request the Feynman rules be calculated and output to the UFO format, with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the Standard Model Lagrangian already, so we simply need to append our new Lagrangian to this buitin one.
 At the same time, we have \feynrules calculate the decay widths of each new particle, and update the model file with these using the calls to \texttt{vertices = FeynmanRules[L]}, \texttt{decays = ComputeWidths[vertices]}, and \texttt{UpdateWidths[decays]}.
 
-Our model files for both the scalar and dark photon models are included in the appendix. \improvement[inline]{include fr in appendix}
+Our model files for both the scalar and dark photon models are included in the appendix \ref{app:model_files} and are the only input into the generation of our events, besides the definition of the process of interest.
 
 \subsection{\feyncalc}
 Only used minimally in this thesis, \feyncalc provides a quick sanity check for calculations done by hand.
