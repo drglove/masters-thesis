@@ -133,4 +133,13 @@ As an example spectrum, with both background and signal, we show Fig.\ \ref{fig:
 
 Once we have a spectrum, it is easy to find the limiting coupling according to our prescription in section \ref{sec:limit_procedure} and equation \ref{eqn:gphi_limit}.
 Instead of analyzing the total number of signal and background events, we can do better by using the spectrum and focusing on the region where the resonance occurs.
-This reduces the background within the bin to a much more reasonable level for sensitivity.
+This reduces the background within the bin to a much more reasonable level for sensitivity, and also keeps all of the signal since we are in a very narrow width scenario.
+To implement this, we ask for the bin with maximum signal, look up the corresponding background level, and compute $g_{\phi\mu}^\textrm{limit}$ to $3\sigma$.
+The resulting limits are shown in Fig.\ \ref{fig:mu3e_limits}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[0.5\textwidth]{Figures/limits/mu3e}
+    \caption{Limits on scalar coupling to muon using $\mu^+$ decay at \mueee. Results are interpolated using 200 mass points for the scalar. In blue are the phase I limits, and in red are the phase II limits.}
+    \label{fig:mu3e_limits}
+\end{figure}
