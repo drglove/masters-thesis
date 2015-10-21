@@ -3,7 +3,23 @@
 We provide the relevant files for generating a usable \feynrules model for the models used in this thesis.
 
 \section{Scalar Model}
+\subsection{\texttt{scalar.fr} Field Definition}
+This file defines the scalar field and its parameters.
+Note that it does not say anything about the width, which will be automatically computed for all available $1 \rightarrow 2$ processes when generating events.
+It also does not contain any information on the allowed interactions, which come in the model file.
 \lstinputlisting{feynrules/scalar.fr}
 
+\subsection{\texttt{scalar.m} Lagrangian and Feynman Rules}
+This file defines the Lagrangian to be used, including both the freely propagating component and the interaction component.
+\feynrules is invoked to produce a computationally usable model.
+\lstinputlisting[language=mathematica]{feynrules/scalar.m}
+
+
 \section{Dark Photon Model}
+The same comments regarding the scalar model hold here also.
+\subsection{\texttt{darkphoton.fr} Field Definition}
+Unlike the scalar model, we must define the $U(1)'$ gauge group here.
 \lstinputlisting{feynrules/darkphoton.fr}
+\subsection{\texttt{darkphoton.m} Lagrangian and Feynman Rules}
+Note that \feynrules has a function \texttt{FS}, which is allows one to use the field strength tensor when formulating a Lagrangian.
+\lstinputlisting[language=mathematica]{feynrules/darkphoton.m}
