@@ -1,0 +1,38 @@
+M$ModelName = "darkphoton";
+
+M$Information = { Authors      -> { "N. Lange" },
+                  Version      -> "1.0",
+                  Date         -> "December 4, 2014",
+                  Institutions -> { "University of Victoria" },
+                  Emails       -> { "nlange@uvic.ca" }
+                };
+
+M$GaugeGroups = {
+    U1D == {
+        Abelian          -> True,
+        CouplingConstant -> eps,
+        GaugeBoson       -> Ad,
+        Charge           -> Q
+    }
+};
+
+M$ClassesDescription = {
+    V[100] == {
+        ClassName        -> Ad,
+        SelfConjugate    -> True,
+        Mass             -> { Mad, 1 },
+        Width            -> { Wad, 1 },
+        PropagatorLabel  -> "ad",
+        PropagatorType   -> W,
+        PropagatorArrow  -> None,
+        ParticleName     -> "ad",
+        FullName         -> "Dark Photon"
+    }
+};
+
+M$Parameters = {
+    eps == { ParameterType    -> External,
+             Value            -> 1,
+             InteractionOrder -> { NP, 1 }
+    }
+};
