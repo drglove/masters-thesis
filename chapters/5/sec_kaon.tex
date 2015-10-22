@@ -4,6 +4,36 @@ We will still make use of \feyncalc in order to compute the traces we require qu
 While NA48/2 and NA62 won't reach a number of kaon decays comparable to the muon decays, we still have $2.0 \times 10^{11}$ $K^+$ decays at NA48/2 and an expected $9.0 \times 10^{12}$ $K^+$ decays at NA62.
 These numbers are large enough to put strong bounds on the scalar, but these will not be as strong as those from \mueee.
 NA48/2 and NA62 will have many kaons decaying with a forward momentum of $75\textrm{GeV} \pm 1\%$, while in the fiducial volume, so we must be careful to take care that the forward detector can actually see any decays we propose.
+The signature we are interested in is similar to the muon decay also: a bump in the spectrum of decay products for the leptonic process $K^+ \rightarrow \mu^+ \nu_\mu \ell^+ \ell^-$, with $\ell = e, \mu$ depending on the available energy.
 Furthermore, the background is more complicated and requires special treatment, which we will talk about now.
 
 \subsection{Background}
+First of all, we must break down the mass regions that we are interested in.
+For $m_\phi < m_{\pi^0}$ the background is dominated by the Dalitz decay
+
+\begin{equation}
+K^+ \rightarrow \mu^+ + \nu_\mu + \pi^0,~\pi^0 \rightarrow e^+ + e^- + \gamma
+\end{equation}
+
+\noindent If we are unable to detect the photon, then this will appear as a background source.
+The production of the $\mu^+ \nu_\mu$ can come also from a $\pi^+$ decay which comes with a branching ratio $\sim 1$, produced via $K^+ \rightarrow \pi^+ \pi^0$.
+This proves to be a very strong background source for the low mass part of the spectrum.
+Since we expect our signal to be very narrow, as the width of the scalar is still very small, we can examine the differential decay rate in the $e^+ e^-$ invariant mass, which is well known.
+The number of background events is given in equations \ref{eqn:kaon_dalitz_background}.
+
+\begin{align}
+\label{eqn:kaon_dalitz_background}
+B(m_{ee}) &= N_{K^+}~\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \pi^0)~\frac{d\Gamma(\pi^0_D)}{d m_{ee}} \frac{\sigma_{m_{ee}}}{\Gamma(\pi^0_{2\gamma})} \textrm{BR}(\pi^0_{2\gamma})~\textrm{Pr}(\textrm{lose}~\gamma) \\
+\frac{1}{\Gamma(\pi^0_{2\gamma})} \frac{d\Gamma(\pi^0_D)}{dx} &= \frac{2\alpha}{3\pi} \frac{(1-x)^3}{x}(1+\frac{r^2}{2x})\sqrt{1-\frac{r^2}{x}}\left|F(x)\right|^2 \\
+x &= \left(\frac{m_{ee}}{m_{\pi^0}}\right)^2 \\
+r^2 &= 4 m_e^2 / m_{\pi^0}^2 \approx 5.73\times 10^{-5} \\
+F(x) &= 1 + ax \approx 1+0.03x
+\end{align}
+
+We will now carefully go over these equations as presented.
+First, for the Dalitz decay to be a background source, we must not detect the photon.
+We take this to have probability $\textrm{Pr}(\textrm{lose}~\gamma) = 10^{-3}$.
+Secondly, the total number of Dalitz decays in one bin must depend on the width of the bin $\sigma_{m_{ee}}$ and we have chosen to normalize the differential decay rate to the decay $\pi^0 \rightarrow 2\gamma$, which comes with a branching ratio $0.98823$ \cite{Agashe:2014kda}.
+Also, the number of background events comes directly from the $K^+$ decays, which we take $\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \pi^0) = 0.03352 + 0.2067 = 0.24022$ to be the sum of the semileptonic and hadronic modes \cite{Agashe:2014kda}.
+Finally, the function $F(x)$ written is the $\pi^0$ form factor, as usually appears when dealing with mesons, and is simply approximated as a linear expansion with a small slope that is measured.
+Later, setting $m_{ee} = m_\phi$ will be used since all of our signal will fall into the one bin.
