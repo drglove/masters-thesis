@@ -147,8 +147,8 @@
      <void id="PointArray3" property="points"> 
       <void index="0"> 
        <object class="java.awt.Point"> 
-        <int>640</int> 
-        <int>64</int> 
+        <int>544</int> 
+        <int>144</int> 
        </object> 
       </void> 
       <void index="1"> 
@@ -371,8 +371,8 @@
      <void id="PointArray10" property="points"> 
       <void index="0"> 
        <object class="java.awt.Point"> 
-        <int>547</int> 
-        <int>146</int> 
+        <int>546</int> 
+        <int>145</int> 
        </object> 
       </void> 
       <void index="1"> 
@@ -525,6 +525,75 @@
      </void> 
      <void property="textString"> 
       <string>\ell</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="net.sf.jaxodraw.object.line.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="amp"> 
+      <int>15</int> 
+     </void> 
+     <void property="arrowPosition"> 
+      <float>0.5</float> 
+     </void> 
+     <void property="arrow"> 
+      <void id="Color8" property="color"/> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color8"/> 
+     </void> 
+     <void property="paintArrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void id="PointArray15" property="points"> 
+      <void index="0"> 
+       <object class="java.awt.Point"> 
+        <int>640</int> 
+        <int>64</int> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="java.awt.Point"> 
+        <int>544</int> 
+        <int>144</int> 
+       </object> 
+      </void> 
+     </void> 
+     <void property="points"> 
+      <object idref="PointArray15"/> 
+     </void> 
+     <void property="strokeWidth"> 
+      <float>1.0</float> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="net.sf.jaxodraw.object.text.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color4"/> 
+     </void> 
+     <void property="latexTextSize"> 
+      <int>6</int> 
+     </void> 
+     <void id="PointArray16" property="points"> 
+      <void index="0"> 
+       <object class="java.awt.Point"> 
+        <int>512</int> 
+        <int>158</int> 
+       </object> 
+      </void> 
+     </void> 
+     <void property="points"> 
+      <object idref="PointArray16"/> 
+     </void> 
+     <void property="textString"> 
+      <string>\mu</string> 
      </void> 
     </object> 
    </void> 
