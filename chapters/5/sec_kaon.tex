@@ -5,6 +5,8 @@ While NA48/2 and NA62 won't reach a number of kaon decays comparable to the muon
 These numbers are large enough to put strong bounds on the scalar, but these will not be as strong as those from \mueee.
 NA48/2 and NA62 will have many kaons decaying with a forward momentum of $75\textrm{GeV} \pm 1\%$, while in the fiducial volume, so we must be careful to take care that the forward detector can actually see any decays we propose.
 The signature we are interested in is similar to the muon decay also: a bump in the spectrum of decay products for the leptonic process $K^+ \rightarrow \mu^+ \nu_\mu \ell^+ \ell^-$, with $\ell = e, \mu$ depending on the available energy.
+For the signal, the scalar will radiate off of the anti-muon.
+This is preferential to a positron due to the increased coupling between the muon and electron.
 Furthermore, the background is more complicated and requires special treatment, which we will talk about now.
 
 \subsection{Background}
@@ -78,4 +80,63 @@ The Feynman diagram for the process we are interested in is shown in Fig.\ \ref{
 \end{figure}
 
 We can do this by making use of the Dalitz plot, where one integrates over the squares of the invariant masses of the pairs in the final state.
-This means we will integrate over any pair of $m_{\mu\nu}^2$, $m_{\mu\phi}^2$, and $m_{\phi\nu}^2$.
+This means we will integrate over any pair of $m_{\mu\nu}^2$, $m_{\mu\phi}^2$, and $m_{\phi\nu}^2$, instead of over the energies of the outgoing particles.
+The reason for doing this is that the matrix element is usually expressed in a simpler fashion using these variables, and the boundaries are easier to define.
+It also reads in a more explicitly covariant manner.
+The pair of variables we choose to integrate over are $m_{\mu\nu}^2$ and $m_{\mu\phi}^2$.
+$m_{\mu\nu}^2$ is chosen because it only appears in the numerator for our process as a simple polynomial when used in conjunction with the other variable.
+$m_{\mu\phi}^2$ is chosen because the propagator of the internal muon appears as $\left(m_{\mu\phi}^2 - m_\mu^2\right)^{-1}$, and is naturally expressed in this variable.
+In the \emph{Kinematics} section of \cite{Agashe:2014kda}, the Dalitz plot is specified in these variables as a density of the squared matrix element.
+An example plot is shown for $m_\phi = 100\textrm{MeV}$ in Fig.\ \ref{fig:dalitz_plot}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/kaon/dalitz}
+    \caption{Dalitz plot for charged kaon decay. The horizontal line corresponds to the resonant condition $m_{\mu\phi}^2 = m_\mu^2$. As the plot gets lighter, the density gets higher, showing that the density of the amplitude increases as one approaches the resonant condition. Here it is not possible to hit the resonance, but as $m_\phi$ gets very small, we get close to it.}
+    \label{fig:dalitz_plot}
+\end{figure}
+
+\noindent The allowable region is precisely defined below.
+
+\begin{equation}
+\begin{split}
+    (m_{\mu\nu}^2)_\textrm{max/min} = m_\mu^2 + \frac{1}{2 m_{\mu\phi}^2} \left(\left(m_K^2 - m_{\mu\phi}^2\right)\left(m_{\mu\phi}^2 - m_\phi^2 + m_\mu^2\right) \pm \right. \\
+    \left. \sqrt{\lambda\left(m_{\mu\phi}^2,m_K^2,0\right) \lambda\left(m_{\mu\phi}^2,m_\phi^2,m_\mu^2\right)}\right)
+\end{split}
+\end{equation}
+
+\noindent $\lamba$ is defined as $\lambda(x,y,z) = x^2 + y^2 + z^2 - 2xy -2xz - 2yz$. 
+After doing this integration, it is then straightforward to integrate over all allowable values of $m_{\mu\phi}^2 \in [(m_\mu + m_\phi)^2, m_K^2]$, to obtain the total rate.
+Carrying out this process yields the width as a function of mass $m_\phi$, and can be seen in Fig.\ \ref{fig:kaon_width}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/kaon/kaon_width}
+    \caption{Partial width of $K^+ \rightarrow \mu^+ \nu_\mu \phi$. The coupling was set to $g_{\phi\mu}=1$. There is an increased rate at extremely low energies, and a quick downturn near the kaon less the muon mass, where the phase space closes rapidly.}
+    \label{fig:kaon_width}
+\end{figure}
+
+Finally, we can use the signal branching ratio combined with our backgrounds to set a limit on the coupling.
+The number of signal events we see is given in equation \ref{eqn:kaon_signal}.
+
+\begin{equation}
+    S = N_{K^+}~\textrm{BR}(K^+ \rightarrow \mu^+ \mu_\nu) \frac{\Gamma(K^+ \rightarrow \mu^+ \mu_\nu \phi)}{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu)}
+    \label{eqn:kaon_signal}
+\end{equation}
+
+\noindent We've chosen to normalize to the two body decay rate here to get rid of any dependence on the kaon form factor.
+For the two body decay rate, it is easy to find the following expression
+
+\begin{equation}
+    \Gamma(K^+ \rightarrow \mu^+ \nu_\mu) = \frac{1}{8\pi m_K^3}\mathnormal{f}_K^2 \left|V_{us}\right|^2 G_F^2 m_\mu^2 \left(m_K^2 - m_\mu^2\right)^2
+\end{equation}
+
+Combining the number of signal events with the number of background events in each background region, we find the limits to follow those in Fig.\ \ref{fig:kaon_limits}.
+Currently, the sensitivity discrepancy near the pion mass is hard to justify, and may indicate that we do not indicate that background in this region correctly.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/limits/kaon_all}
+    \caption{Limits on scalar coupling to muon from charged kaon decays. Blue lines correspond to NA48/2 and red to NA62. The three regions each correspond to a different background source, with the Dalitz decay of the $\pi^0$ being dominant below the $\pi^0$ mass, and the irreducible backgrounds to either $\mu^+ \nu_\mu e^+ e^-$ below $2m_\mu$, or $\mu^+ \nu_\mu \mu^+ \mu^-$ above this range to the kinematic limit.}
+    \label{fig:kaon_limits}
+\end{figure}
