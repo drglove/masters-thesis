@@ -55,3 +55,22 @@ In the absence of background, the simplest thing then we can do is set a certain
 Since this decay is currently not observed, we set sensitivity to be where 5 signal events in this region.
 
 \subsection{Signal}
+Here we will actually compute the decay width of the kaon contribution from our process by hand.
+The signal we are interested in is
+
+\begin{equation}
+    K^+ \rightarrow \mu^+ + \nu_\mu + \phi,~\phi \rightarrow \ell^+ + \ell^-
+\end{equation}
+
+\noindent Both channels $(\ell = e, \mu)$ can be treated at the same time, as we treat the $\phi$ as being on-shell and following the decay chain.
+The Feynman diagram for the process we are interested in is shown in Fig.\ \ref{fig:kaon_decay_signal}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/feynman_diagrams/k_munull_scalar}
+    \caption{Feynman diagram for charged kaon decay through the new scalar. The scalar decays to either an $e^+ e^-$ pair, or a $\mu^+ \mu^-$ pair, depending on the mass available to the scalar, which is taken to be on-shell. The blob represents them form factor for the kaon.}
+    \label{fig:kaon_decay_signal}
+\end{figure}
+
+We can do this by making use of the Dalitz plot, where one integrates over the squares of the invariant masses of the pairs in the final state.
+This means we will integrate over any pair of $m_{\mu\nu}^2$, $m_{\mu\phi}^2$, and $m_{\phi\nu}^2$.
