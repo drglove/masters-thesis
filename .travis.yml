@@ -12,7 +12,7 @@ addons:
 
 script:
   # Build
-  - latexmk -pdf -f --interaction=nonstopmode thesis.tex
+  - latexmk -pdf -f thesis
 
 deploy:
   provider: releases
