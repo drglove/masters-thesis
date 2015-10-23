@@ -1,0 +1,23 @@
+os: linux
+
+# We use the R VM because it contains LaTeX
+language: r
+
+# We need sudo
+sudo: required
+
+apt_packages:
+  # latexmk will handle building bibtex entries for us also
+  - latexmk
+
+script:
+  # Build
+  - latexmk -pdf -f --interaction=nonstopmode thesis.tex
+
+deploy:
+  provider: releases
+  api_key:
+    secure: iN4r5eoYLmHuchhlcexT1ChV458nBOa7O4dGNcShE1zfQEOrS60m2yUVGz2ovW/RAonNGjn6meyEPvFmMrEJH42oUKep7ekuWHDphW7VsaFF34qxTtXfpc174wMkxuHUr4CBqz+U1w8vhtDqJt7nwUJWBCURQcQjcoDun4S7XIaZ6in2DrZttEYo6oswLZcL6atIJLS5d54HDXPkUsNSy7tliwDKOpypuab3opWAOCdq+dcLlUi5627vRRadPcCX0/On5I3IiBaeFhAnhDFnSFeTTz4LNqOb99CC1KPGATjz/ZaEdlbDH/1Ty+zY69V2ChDWGp0Qd7AbGHXQB/L/arJAOu9qWYHXSL19u9ThNZeXQDTpG2MkoBPDxC0n2+350g8jKJGE8oT4guG1dfBnJE/eZpuXHko6K4/UAxL9mOXEJ38Jh1dqw2/2P6LdH1OjX9gIQtXODbTBwAb8eZhuAt2oo6OecDxoUgJN0ZwJ+EzqG/FiG5YIIo6p70N+C0yA+P8+pnJ8WDDNiGVIzkRvVqNveWtJAK+d9SFQEKD57EjVNt6mEamsb8U9XXru7Qk0E2Nl4jtNXTYp3op6PP7RAsEWYn5yyKCltrPGOZODSwJx+jMb1E5FTjaO/CcrC0BpLgMxP8/6elAVHRbHbgNGhCnR3KlEJSssJsFSVMs5JlI=
+  file: thesis.pdf
+  on:
+    repo: drglove/masters-thesis
