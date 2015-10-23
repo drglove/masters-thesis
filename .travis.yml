@@ -1,12 +1,14 @@
 os: linux
 
-apt_packages:
-  - texlive-fonts-recommended
-  - texlive-latex-extra
-  - texlive-fonts-extra
-  - texlive-latex-recommended
-  # latexmk will handle building bibtex entries for us also
-  - latexmk
+addons:
+  apt:
+    packages:
+      - texlive-fonts-recommended
+      - texlive-latex-extra
+      - texlive-fonts-extra
+      - texlive-latex-recommended
+      # latexmk will handle building bibtex entries for us also
+      - latexmk
 
 script:
   # Build
