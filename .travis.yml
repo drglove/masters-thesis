@@ -1,12 +1,10 @@
 os: linux
 
-# We use the R VM because it contains LaTeX
-language: r
-
-# We need sudo
-sudo: required
-
 apt_packages:
+  - texlive-fonts-recommended
+  - texlive-latex-extra
+  - texlive-fonts-extra
+  - texlive-latex-recommended
   # latexmk will handle building bibtex entries for us also
   - latexmk
 
