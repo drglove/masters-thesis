@@ -9,6 +9,7 @@ addons:
       - texlive-latex-recommended
       - texlive-pictures
       - latex-xcolor
+      - pgf
       # latexmk will handle building bibtex entries for us also
       - latexmk
 
