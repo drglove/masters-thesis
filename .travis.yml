@@ -1,27 +1,22 @@
-os: linux
+language: c
+sudo: false
 
-addons:
-  apt:
-    packages:
-      - texlive-fonts-recommended
-      - texlive-font-utils
-      - texlive-latex-extra
-      - texlive-fonts-extra
-      - texlive-latex-recommended
-      - texlive-pictures
-      - latex-xcolor
-      - pgf
-      # latexmk will handle building bibtex entries for us also
-      - latexmk
+before_install:
+  - mkdir -p $HOME/texlive && curl -L https://github.com/urdh/texlive-blob/releases/download/20150712/texlive.tar.xz | tar -JxC $HOME/texlive
+
+install:
+  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+  - tlmgr update --self
 
 script:
   # Build
-  - latexmk -pdf -f thesis
+  - latexmk -pdf -f --interaction=nonstopmode thesis
 
 deploy:
   provider: releases
   api_key:
     secure: iN4r5eoYLmHuchhlcexT1ChV458nBOa7O4dGNcShE1zfQEOrS60m2yUVGz2ovW/RAonNGjn6meyEPvFmMrEJH42oUKep7ekuWHDphW7VsaFF34qxTtXfpc174wMkxuHUr4CBqz+U1w8vhtDqJt7nwUJWBCURQcQjcoDun4S7XIaZ6in2DrZttEYo6oswLZcL6atIJLS5d54HDXPkUsNSy7tliwDKOpypuab3opWAOCdq+dcLlUi5627vRRadPcCX0/On5I3IiBaeFhAnhDFnSFeTTz4LNqOb99CC1KPGATjz/ZaEdlbDH/1Ty+zY69V2ChDWGp0Qd7AbGHXQB/L/arJAOu9qWYHXSL19u9ThNZeXQDTpG2MkoBPDxC0n2+350g8jKJGE8oT4guG1dfBnJE/eZpuXHko6K4/UAxL9mOXEJ38Jh1dqw2/2P6LdH1OjX9gIQtXODbTBwAb8eZhuAt2oo6OecDxoUgJN0ZwJ+EzqG/FiG5YIIo6p70N+C0yA+P8+pnJ8WDDNiGVIzkRvVqNveWtJAK+d9SFQEKD57EjVNt6mEamsb8U9XXru7Qk0E2Nl4jtNXTYp3op6PP7RAsEWYn5yyKCltrPGOZODSwJx+jMb1E5FTjaO/CcrC0BpLgMxP8/6elAVHRbHbgNGhCnR3KlEJSssJsFSVMs5JlI=
   file: thesis.pdf
+  skip_cleanup: true
   on:
     repo: drglove/masters-thesis
