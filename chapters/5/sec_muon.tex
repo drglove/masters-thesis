@@ -1,4 +1,4 @@
-\section{Limits on \mueee from Muon Decays}
+\section{Limits from Muon Decays in \mueee Experiment}
 In section \ref{sec:mu3e_experiment}, we saw how the production rate of $\mu^+$ at \mueee could be brought to the level of muon decays occuring at a rate $\order(10^9) \mu^+/s$.
 The signal for the \mueee experiment, $\mu^+ \rightarrow e^+ e^+ e^-$, contains no missing energy as there are no neutrinos in the final state.
 The SM has many avenues to produce such a signal with missing energy through muon decay, and we will go through the relevant backgrounds to our limits here.
@@ -10,7 +10,7 @@ Furthermore, even though we will be looking at a four body decay, the scalar par
 All of the diagrams that \madgraph generates are available in appendix \ref{app:muon_diagrams}.
 
 \subsection{Backgrounds}
-Here we will discuss the relevant backgrounds to the experiment and their initial implications on their effects on our limits.
+Here we will discuss the relevant backgrounds to the proposed signature and their initial implications on their effects on our sensitivity limits.
 
 A strong irreducible background for the experiment is
 
@@ -42,10 +42,11 @@ Another source of background for the experiment is the radiative muon decay
 This process comes with a branching ratio of $1.4 \times 10^{-2}$, given a photon energy larger than $10\textrm{MeV}$ \cite{Agashe:2014kda}.
 The photon can then convert to an $e^+ e^-$ pair in the detector or target material, and mimic the irreducible background above.
 Conversions outside of the target can be supressed if the vertex can be readily identified.
+This conversion process will be a much more important source of background for the low mass range of the scalar, as the $e^+ e^-$ pair from the converted photon will be highly collimated for all but the lowest photon energies.
 Within the target, this background appears as an accidental background with a regular muon decay.
 
 There are other sources of background present as well.
-We've already briefly mentioned Michel decays, which can be identified by the lack of any negatively charged particle tracks, since the experiment uses a $\mu^+$ beam.
+We have already briefly mentioned Michel decays, which can be identified by the lack of any negatively charged particle tracks, since the experiment uses a $\mu^+$ beam.
 Bhabha scattering from the positrons coming from either the muon decay, or a contaminated beam, scattering off of the target material make an $e^+ e^-$ pair appear from a single vertex.
 This has missing energy from the unaccounted electron in the target material, and can be removed as the irreducible background.
 Finally, there are also pions that may contaminate the beam and decay either to $\pi^+ \rightarrow e^+ e^+ e^- \nu_e$, or $\pi^+ \rightarrow \mu^+ \nu_\mu \gamma$ with the photon converting to an $e^+ e^-$ pair, which have branching ratios $3.2 \times 10^{-9}$ and $2.00 \times 10^{-4}$ relatively \cite{Agashe:2014kda}.
@@ -54,11 +55,11 @@ It is expected that the pion contamination is on the order of $10^{-12}$ for the
 Using \madgraph, we generate $200,000$ events corresponding to the SM background for our signal, $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$.
 We use such a high amount to have properly populated bins near the tails of the distribution, where the likelihood that a bin will be populated is small.
 To improve the time required to generate the events, we ignore contributions from the Higgs and the $Z$ bosons, as they will not contribute at energies associated with muon decay.
-As a sanity check, the total width we obtain from the SM process is $1.239\times 10^{-23}\textrm{GeV}$, yielding a branching ratio of $4.119\times 10^{-5}$, which is sensible compared with the PDG value of $(3.4 \pm 0.4) \times 10^{-5}$ \cite{Agashe:2014kda}.
+As a cross-check, the total width we obtain from the SM process is $1.239\times 10^{-23}\textrm{GeV}$, yielding a branching ratio of $4.119\times 10^{-5}$, which is sensible compared with the PDG value of $(3.4 \pm 0.4) \times 10^{-5}$ \cite{Agashe:2014kda}.
 
 \subsection{Signal}
-The signal we are interested in is the change in the irreducible background present in \mueee.
-That is, the process we are investigating has the same final state as $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$.
+The signal we are interested in is the spectral feature over the irreducible background present in \mueee.
+That is, the process we are investigating has the same final state as $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$, but with the electron and one of the positrons reconstructing the mass of the scalar.
 
 We will be using both the scalar model and the dark photon model here.
 The signal processes of interest are the decay chains
@@ -91,16 +92,16 @@ The results of generating these events are twofold:
     \item{A collection of events with the four-momentum for each particle, and their parent if they are a decay product. We can use these to draw the spectrum of the decay products.}
 \end{itemize}
 
-Once we have a collection of events, we can bin the results in a sensible parameter, and use the spectrum to place limits on the sensitivity of \mueee.
+Once we have a collection of events, we can bin the results in a relevant parameter, and use the spectrum to place limits on the sensitivity of \mueee.
 A natural choice here is to plot the histogram of events in the invariant mass of the $e^+ e^-$ pair.
-Since the scalar is decaying on-shell and it has a narrow width, the invariant mass of its decay products must equal the mass of the parent.
+Since the scalar is decaying on-shell and has a narrow width, the invariant mass of its decay products must equal the mass of the parent.
 This yeilds a resonant ``bump'' in the decay spectrum at the mass of the scalar, and the signal spectrum behaves as a delta function.
 Since the final state has two positrons, it is not clear which to use when constructing the invariant mass spectrum.
-These should be back to back, so some cuts could be decided on which would correspond to the correct pair with a high confidence.
-However, for our simple analysis, we do the naive thing and construct both available pairs, and simply correct by a factor of two.
-Note that while we know the true parent, we do not make use of this information to reflect better an experimental point of view of discovery.
+These should be back to back, but only in the rest from of the scalar, so it is unlikely that some cuts could be decided on which would correspond to the correct pair with a high confidence.
+However, for our simple analysis, we construct both available pairs, and simply correct by a factor of two.
+Note that while we know the true parent, we do not make use of this information to reflect better an experimental point of view for a possible search of the scalar.
 
-The choice of binning chosen is very important.
+The choice of binning is very important.
 Too wide and the signal features can be spread across a wide number of background events in the same bin.
 On the other side, we are limited by the detector's tracking and energy resolution.
 Through private communication in August, 2014 with Dr. Andre Sch\"oning, the contact person at \mueee, we have been told that the mass resolution is $\sigma_m / m \approx 0.004$.
@@ -108,8 +109,8 @@ This holds best for the heavier mediators, in the range of $10 - 100\textrm{MeV}
 Lighter invariant mass pairs, $\sim 1\textrm{MeV}$, are harder to distinguish, as the decay angle is small and the resolution is limited by multiple scattering.
 For now, we simply use the mass resolution at $10\textrm{MeV}$ as written down, for the low mass limit of our generated events, but one must keep in mind that below $10\textrm{MeV}$, the results will likely be overly optimistic.
 
-With this mass resolution in mind, we go bin each of the spectra.
-After scaling up the total number of events to $10^{15}~(5.5\times 10^{16})$ for \mueee phase I (phase II), scaling the signal events by the branching ratio of the signal, and scaling the background events by the SM branching ratio, we have a ready to use spectrum.
+With this mass resolution in mind, we bin each of the spectra.
+After scaling up the total number of events to $10^{15}~(5.5\times 10^{16})$ for \mueee phase I (phase II), scaling the signal events by the branching ratio of the signal, and scaling the background events by the SM branching ratio, we are ready to use the spectrum.
 We also had to rescale by a factor of $137 / 127.9$ for the running of the $\alpha$ coupling, as \madgraph by default uses $\alpha$ evaluated at the mass of the $Z$.
 The scaling by the branching ratios ensures that we have the correct number of expected total signal events, and background events.
 As an example spectrum, with both background and signal, we show Fig.\ \ref{fig:mu_eeenunu_spectrum}.
@@ -127,7 +128,7 @@ As an example spectrum, with both background and signal, we show Fig.\ \ref{fig:
         \label{fig:mu_eeenunu_scalar_background_spectrum}
     \end{subfigure}
     \caption{Sample invariant mass spectrm from events generated by \madgraph. Events in red correspond to signal events, and events in blue correspond to background events.
-            \textbf{Left}: The signal spectrum. Note the narrow resonance corresponding to the production of the scalar mediator. To see the peak well, $g_{\phi\mu} = 0.01$ is used.
+            \textbf{Left}: The signal spectrum. Note the narrow resonance corresponding to the production of the scalar mediator. The smooth variation below the resonance is attributed to the reconstruction of the $e^+e^-$ pair using the positron whose parent is not the $\phi$. To see the peak well, $g_{\phi\mu} = 0.01$ is used.
             \textbf{Right}: The signal and background spectrum. The bump is slightly visible above the background, centered at the mass used during generation. Elsewhere on the spectrum, the signal is not visible.}
     \label{fig:mu_eeenunu_spectrum}
 \end{figure}
@@ -136,7 +137,7 @@ Once we have a spectrum, it is easy to find the limiting coupling according to o
 Instead of analyzing the total number of signal and background events, we can do better by using the spectrum and focusing on the region where the resonance occurs.
 This reduces the background within the bin to a much more reasonable level for sensitivity, and also keeps all of the signal since we are in a very narrow width scenario.
 To implement this, we ask for the bin with maximum signal, look up the corresponding background level, and compute $g_{\phi\mu}^\textrm{limit}$ to $3\sigma$.
-The resulting limits are shown in Fig.\ \ref{fig:mu3e_limits}.
+The resulting sensitivity limits are shown in Fig.\ \ref{fig:mu3e_limits}.
 
 \begin{figure}[h]
     \centering
@@ -145,18 +146,18 @@ The resulting limits are shown in Fig.\ \ref{fig:mu3e_limits}.
     \label{fig:mu3e_limits}
 \end{figure}
 
-We also make use of limits placed on the dark photon at the \mueee experiment, to obtain limits in a second fashion.
+We also make use of existing study of the dark photon at the \mueee experiment, to obtain limits in a second fashion.
 Echenard et.\ al.\ have done this in a similar method as us, using \madgraph to generate events and then inserting a proper detector simulation \cite{Echenard:2014lma}.
 Their limits extend for a dark photon mass range of $10 - 80\textrm{MeV}$, as the dark photon is mostly ruled out already below $10\textrm{MeV}$.
 This removes any need for us to do background simulation for this case.
 In order to translate their limits from the dark photon case, to the scalar case, we must do a simple simulation of the dark photon signal ourselves.
 Using the dark photon model developed earlier for \madgraph, we perform the same generation of events as outlined for the scalar.
 We set the dark photon kinetic mixing to $\epsilon = 0.1$, and generate signal events over the same 200 mass points.
-Equating the number of signal events between the two models for the given limiting $\epsilon$ and an unknown limiting $g_{\phi\mu}$, lets us translate the limits, since the number of events detected for sensitivity to be claimed must be the same.
-Doing this we find equation \ref{eqn:gphi_limit_echenard}.
+Equating the number of signal events between the two models for the given limiting $\epsilon$ and an unknown limiting $g_{\phi\mu}$, let us translate the limits, since the number of events detected for sensitivity to be claimed must be the same.
+Doing this we find the following result,
 
 \begin{equation}
-    g_{\phi\mu}^\textrm{limit} = g_{\phi\mu}^\textrm{test} \frac{\epsilon^\textrm{limit}}{\epsilon^\textrm{test}}\sqrt{\frac{\textrm{BR}(\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e A')}{\textrm{BR}(\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e \phi)}}
+    g_{\phi\mu}^\textrm{limit} = g_{\phi\mu}^\textrm{test} \frac{\epsilon^\textrm{limit}}{\epsilon^\textrm{test}}\sqrt{\frac{\textrm{BR}(\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e A')}{\textrm{BR}(\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e \phi)}}\textrm{.}
     \label{eqn:gphi_limit_echenard}
 \end{equation}
 

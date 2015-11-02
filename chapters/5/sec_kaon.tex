@@ -1,12 +1,12 @@
-\section{Limits on NA48/2 and NA62 from Charged Kaon Decays}
-In contrast to the previous section on muon decay, kaon decay is relatively easy to handle and can be done even analytically.
-We will still make use of \feyncalc in order to compute the traces we require quickly, and \mathematica to compute the final state integration, although it is not necessary under certain approximations and is genuinely computable by hand.
-While NA48/2 and NA62 won't reach a number of kaon decays comparable to the muon decays, we still have $2.0 \times 10^{11}$ $K^+$ decays at NA48/2 and an expected $9.0 \times 10^{12}$ $K^+$ decays at NA62.
-These numbers are large enough to put strong bounds on the scalar, but these will not be as strong as those from \mueee.
+\section{Sensitivty Reach of on NA48/2 and NA62 from Charged Kaon Decays}
+In contrast to the previous section on muon decay, the calculations of kaon decay are relatively easy to handle and can be done even analytically.
+We will still make use of \feyncalc in order to compute the traces, and \mathematica to compute the final state integration, although it is not necessary under certain approximations and is genuinely computable by hand.
+While NA48/2 and NA62 will not reach a number of kaon decays comparable to the muon decays, we still have $2.0 \times 10^{11}$ $K^+$ decays at NA48/2 and an expected $9.0 \times 10^{12}$ $K^+$ decays at NA62.
+These numbers are large enough to put strong bounds on the scalar, but likely not as strong as those from \mueee.
 NA48/2 and NA62 will have many kaons decaying with a forward momentum of $75\textrm{GeV} \pm 1\%$, while in the fiducial volume, so we must be careful to take care that the forward detector can actually see any decays we propose.
 The signature we are interested in is similar to the muon decay also: a bump in the spectrum of decay products for the leptonic process $K^+ \rightarrow \mu^+ \nu_\mu \ell^+ \ell^-$, with $\ell = e, \mu$ depending on the available energy.
 For the signal, the scalar will radiate off of the anti-muon.
-This is preferential to a positron due to the increased coupling between the muon and electron.
+This channel will dominate over emission from a positron, $K^+ \rightarrow e^+ \nu_e \phi$, due to the larger coupling to muons.
 Furthermore, the background is more complicated and requires special treatment, which we will talk about now.
 
 \subsection{Backgrounds}
@@ -17,10 +17,10 @@ For $m_\phi < m_{\pi^0}$ the background is dominated by the Dalitz decay
 K^+ \rightarrow \mu^+ + \nu_\mu + \pi^0,~\pi^0 \rightarrow e^+ + e^- + \gamma
 \end{equation}
 
-\noindent If we are unable to detect the photon, then this will appear as a background source.
+\noindent If the photon is not detected, then this will appear as a background source.
 The production of the $\mu^+ \nu_\mu$ can come also from a $\pi^+$ decay which comes with a branching ratio $\sim 1$, produced via $K^+ \rightarrow \pi^+ \pi^0$.
 This proves to be a very strong background source for the low mass part of the spectrum.
-Since we expect our signal to be very narrow, as the width of the scalar is still very small, we can examine the differential decay rate in the $e^+ e^-$ invariant mass, which is well known.
+Since we expect our signal to be very narrow, as the width of the scalar is very small, we can examine the differential decay rate in the $e^+ e^-$ invariant mass, which is well known.
 The number of background events is given in equations~\ref{eqn:kaon_dalitz_background}.
 The expression for $\Gamma(\pi^0_D)$ is given by~\cite{Mikaelian:1972yg}.
 
@@ -36,13 +36,13 @@ F(x) &= 1 + ax \approx 1+0.03x
 We will now carefully go over these equations as presented.
 First, for the Dalitz decay to be a background source, we must not detect the photon.
 We take this to have probability $\textrm{Pr}(\textrm{lose}~\gamma) = 10^{-3}$.
-Secondly, the total number of Dalitz decays in one bin must depend on the width of the bin $\sigma_{m_{ee}}$ and we have chosen to normalize the differential decay rate to the decay $\pi^0 \rightarrow 2\gamma$, which comes with a branching ratio $0.98823$~\cite{Agashe:2014kda}.
+Secondly, the total number of Dalitz decays in one bin must depend on the width of the bin $\sigma_{m_{ee}}$ and we normalize to the total decay with of the positively charged kaon.
 Also, the number of background events comes directly from the $K^+$ decays, which we take $\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \pi^0) = 0.03352 + 0.2067 = 0.24022$ to be the sum of the semileptonic and hadronic modes~\cite{Agashe:2014kda}.
 Finally, the function $F(x)$ written is the $\pi^0$ form factor, as usually appears when dealing with mesons, and is simply approximated as a linear expansion with a small slope that is measured.
 Later, setting $m_{ee} = m_\phi$ will be used since all of our signal will fall into the one bin.
 
 Outside of this range, the other irreducible backgrounds which take over are split into two ranges.
-For $150\textrm{MeV} < m_\phi < 2m_\mu$, the dominant decay is $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ and has a measured branching ratio of $7.06 \times 10^{-8}$.
+For $150\textrm{MeV} < m_{ee} < 2m_\mu$, the dominant decay is $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ and has a measured branching ratio of $7.06 \times 10^{-8}$.
 Below $150\textrm{MeV}$, this background is hard to measure due to cuts made to keep the lepton pair mass above the pion threshold.
 Currently it is not known if NA62 will be able to study lepton pairs with a mass below the pion mass.
 Since we do not know the distribution of these events in $m_{ee}$, we take them to be uniformly distributed from the cut at $150\textrm{MeV}$ up to the kinematic limit of $m_K - m_\mu$.
@@ -112,7 +112,7 @@ Carrying out this process yields the width as a function of mass $m_\phi$, and c
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/kaon/kaon_width}
-    \caption{Partial width of $K^+ \rightarrow \mu^+ \nu_\mu \phi$. The coupling was set to $g_{\phi\mu}=1$. There is an increased rate at extremely low energies, and a quick downturn near the kaon less the muon mass, where the phase space closes rapidly.}
+    \caption{Partial width of $K^+ \rightarrow \mu^+ \mu_\nu \phi$. The coupling was set to $g_{\phi\mu}=1$. There is an increased rate at extremely low energies, and a quick downturn near the kaon less the muon mass, where the phase space closes rapidly.}
     \label{fig:kaon_width}
 \end{figure}
 

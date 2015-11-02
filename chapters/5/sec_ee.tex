@@ -1,4 +1,4 @@
-\section{Limits on B-factories from $e^+ e^-$ Collisions}
+\section{Sensitivity Reach of B-factories from $e^+ e^-$ Annihilation}
 For $e^+ e^-$ collisions, we make use of \madgraph again to handle our signal and background estimates.
 Most of what was said about generation of events for the muon events holds here.
 
@@ -20,8 +20,6 @@ Below this it can only decay to an $e^+ e^-$ pair, so the overall process for $m
 \subsection{Backgrounds}
 Here we simply write down the irreducible SM background process, and let \madgraph run.
 We generate $10,000$ background events for each of the two final states.
-In this case, we allow the $Z$ to be a propagator, simply because it is easy to include and hard to exclude with \madgraph syntax.
-However, this does not modify the result in any tangible way, as has been checked, since the energies are still well below the resonant condition for producing the $Z$.
 A sample Feynman diagram is shown in Fig.\ \ref{fig:ee_tautaull_SM}.
 
 \begin{figure}[h]
@@ -34,7 +32,7 @@ A sample Feynman diagram is shown in Fig.\ \ref{fig:ee_tautaull_SM}.
 \subsection{Signal}
 Again, we simply define our process and let \madgraph run akin to the muon decay generation.
 $10,000$ events are generated at each of $20$ mass points from $2m_e$ up to $2m_\mu$, and again from $2m_\mu$ up to $2m_\tau$.
-However we do not go above $2m_\tau$ for simplicity, as this may open many decay channels yielding a messy signal.
+However we do not go above $2m_\tau$ for simplicity, as this will open the $4\tau$ channel, whose signature does not have the advantage of being a spectrally peaked signal. 
 We enforce that the generation of the scalar is once again on-shell, so our process is really the decay chain below.
 
 \begin{equation}
@@ -51,7 +49,7 @@ A sample Feynman diagram for the signal is shown in Fig.\ \ref{fig:ee_tautaull_s
 \end{figure}
 
 For our signal, since this is now a collision scenario and not a decay, we must weight our total number of events by the cross section determined by \madgraph.
-The width we've chosen here is also just the energy resolution of the detector listed in the technical design report for \belletwo \cite{Abe:2010gxa} as
+The width we have chosen here is also just the energy resolution of the detector listed in the technical design report for \belletwo \cite{Abe:2010gxa} as
 
 \begin{equation}
     \frac{\sigma_E}{E} = \sqrt{\left(\frac{0.066\%}{E}\right)^2 + \left(\frac{0.81\%}{E^{1/4}}\right)^2 + \left(1.34\%\right)^2}
@@ -59,14 +57,14 @@ The width we've chosen here is also just the energy resolution of the detector l
 
 \noindent with $E$ being measured in $\textrm{GeV}$.
 
-One of the more interesting components to this signal, is that we do not need to full reconstruct both outgoing $\tau$ particles.
+One of the more interesting components to this signal, is that we do not need to fully reconstruct both outgoing $\tau$ particles.
 It is sufficient that we have one of them decay leptonically, $\tau^- \rightarrow \ell^- \bar{\nu}_\ell \nu_\tau$ (or the conjugate decay), which comes with a total branching fraction $\textrm{BR} = 0.1742 + 0.1783 = 0.3524$ \cite{Agashe:2014kda}.
-The $\tau$ that we do not decay leptonically, can go as missing energy or hadrons, or other leptons.
-So our signal really is three charged leptons in the final state, and either hadrons, leptons, or missing energy.
+For the other $\tau$, we allow all decay modes.
+Thus, our signal really is three charged leptons in the final state, and either hadrons, leptons, or missing energy with two same flavour oppositely charged leptons reconstructing to the same invariant mass.
 It should be noted that while we currently do not do this, there are known efficiencies for $\tau \rightarrow 4\ell$ that we can use to correctly account for this.
 Additionally, we only introduce a total efficiency of $0.5$ to be safe here, as there should be some acceptance loss distinguishing the lepton from the tau decay with one of the leptons in the pair.
 An acceptance loss could be accepted here because these should be well separated in angular variables.
-We also need to correct for the scalar coupling, as the one actually of importance in this scenario is the coupling to the tau, so any limits set must be scaled down the that of the muon.
+We also need to correct for the appropriate scalar coupling, as the one actually of importance in this scenario is the coupling to the tau, so any sensitivity limits set must be scaled down to that of the muon.
 
 Given the above, the full limits are shown in Fig.\ \ref{fig:ee_limits}.
 
