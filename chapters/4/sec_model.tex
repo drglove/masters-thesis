@@ -28,8 +28,21 @@ After integrating the kinetic mixing term appearing in the Lagrangian by parts, 
 \end{equation}
 where $J^\mu_{EM} \equiv e \bar{\psi} \gamma^\mu \psi$ is the electromagnetic current.
 We then have a coupling between fermions and the dark photon with strength $\epsilon e$, i.e.\ it looks just like the typical QED coupling but suppressed by a factor of $\epsilon$.
+Taking the dark photon to decay to SM particles, we have the partial width of the dark photon to go to a lepton pair is given by,
 
-This may look like the coupling to each lepton is the same, and it is.
+\begin{equation}
+    \Gamma_{A' \rightarrow \ell^+ \ell^-} = \frac{\alpha \epsilon^2}{3} m_{A'} \sqrt{1-\frac{4 m_\ell^2}{m_{A'}^2}}\left(1 + \frac{2 m_\ell^2}{m_{A'}^2}\right)
+\end{equation}
+
+\noindent which yields the convenient typical decay length when decaying to electrons to be given by \cite{Echenard:2014lma},
+
+\begin{equation}
+    c \tau_{A' \rightarrow e^+ e^-} \approx 0.8\textrm{mm} \left(\frac{10^{-4}}{\epsilon}\right)^2 \frac{10\textrm{MeV}}{m_{A'}}\textrm{.}
+\end{equation}
+
+\noindent For most of the area of the parameter space near the current limits, this gives decays that will travel a finite distance, which experiments could look for as displaced vertices.
+
+In this model, it may look like the coupling to each lepton is the same, and it is.
 It is not immeditately clear that one can have an assymetric effect across leptons on the charged proton radius, or the magnetic moment.
 However in the case where a muon is concerened, the virtual particles may be much more massive.
 For this reason, the muon is much more sensitive to undiscovered particles, such as an $A'$, than the electron, regardless of the couplings being the same between muon and electron.\improvement{more detail on coupling}
@@ -66,6 +79,23 @@ It is important to point out that this Lagrangian does not possess $SU(2) \times
 No quartic self interaction of the scalar is written down, which hints that this theory is not renormalizable as well.
 However, a UV complete version of this model, also respecting $SU(2) \times U(1)$ gauge invariance, has been worked out starting from a leptonic-specific two Higgs-doublet model and is currently a work in progress \cite{Batell:2015unpub}.
 This allows one to extend the Higgs sector such that there is one doublet that, representing a light scalar state that would be accessible, which couples only to leptons, while the other doublet couples only to quarks.
+
+With this model, the partial decay widths of the $\phi$ to pairs of leptons goes as
+
+\begin{equation}
+    \Gamma_{\phi \rightarrow \ell^+ \ell^-} = \frac{1}{8\pi^2} g_{\phi\ell}^2 m_\phi \left(1-\frac{4m_\ell^2}{m_\phi^2}\right)^{\frac{3}{2}}\textrm{.}
+\end{equation}
+
+\noindent The largest implication of this decay width for us, is the relative partial widths between muons and electrons as the decay products.
+Once the muon channel opens up, i.e.\ when $m_\phi > 2 m_\mu \gg 2 m_e$, and taking the total width to only have contributions from the $e^+ e^-$ and $mu^+ mu^-$ channels, we have that
+
+\begin{align}
+    \textrm{BR}(\phi \rightarrow \mu^+ \mu^-) &= \frac{1}{1+\frac{\Gamma\left(\phi \rightarrow e^+ e^-\right)}{\Gamma\left(\phi \rightarrow \mu^+ \mu^-\right)}} \\
+    \frac{\Gamma_{\phi \rightarrow e^+ e^-}}{\Gamma_{\phi \rightarrow \mu^+ \mu^-}} &\approx \frac{m_e^2}{m_\mu^2}\left(1-\frac{4m_\mu^2}{m_\phi^2}\right)^{-\frac{3}{2}}\textrm{.}
+\end{align}
+
+\noindent Due to the suppression from the leading $m_e^2/m_\mu^2$ term, once the decay to muons is kinematically accessible due to the large mass of the $\phi$, one can effectively neglect the branching ratio to the electrons and take $\textrm{BR}(\phi \rightarrow \mu^+ \mu^-) \approx 1$.
+This has the consequence of allowing us to estimate sensitivity limits in an easier fashion, as we need only take into account the electron decay channel until the muon is accessible where it dominates, and similarly for the tau.
 
 Of most importance is the relative magnitude of couplings.
 We would like a weak coupling to electrons such that we do not disturb the proton radius as extracted in the electron-proton scattering experiments, and measurement of the atomic energy levels of electronic Hydrogen.
