@@ -36,6 +36,7 @@ F(x) &= 1 + ax \approx 1+0.03x
 We will now carefully go over these equations as presented.
 First, for the Dalitz decay to be a background source, we must not detect the photon.
 We take this to have probability $\textrm{Pr}(\textrm{lose}~\gamma) = 10^{-3}$.
+A typical inefficiency for high energy photons in NA62 is a few times $10^{-4}$ \cite{Martellotti:2015kna}, which will be slightly worse for any lower energy photons so we take a slightly pessimistic view and use $10^{-3}$.
 Secondly, the total number of Dalitz decays in one bin must depend on the width of the bin $\sigma_{m_{ee}}$ and we normalize to the total decay with of the positively charged kaon.
 Also, the number of background events comes directly from the $K^+$ decays, which we take $\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \pi^0) = 0.03352 + 0.2067 = 0.24022$ to be the sum of the semileptonic and hadronic modes~\cite{Agashe:2014kda}.
 Finally, the function $F(x)$ written is the $\pi^0$ form factor, as usually appears when dealing with mesons, and is simply approximated as a linear expansion with a small slope that is measured.
@@ -46,6 +47,8 @@ For $150\textrm{MeV} < m_{ee} < 2m_\mu$, the dominant decay is $K^+ \rightarrow 
 Below $150\textrm{MeV}$, this background is hard to measure due to cuts made to keep the lepton pair mass above the pion threshold.
 Currently it is not known if NA62 will be able to study lepton pairs with a mass below the pion mass.
 Since we do not know the distribution of these events in $m_{ee}$, we take them to be uniformly distributed from the cut at $150\textrm{MeV}$ up to the kinematic limit of $m_K - m_\mu$.
+This can be improved by using Monte Carlo techniques to generate this background distribution as well.
+The result of using this distribution compared to the true one, likely yields an over-sensitivity projections at lower masses, and under-sensitivity projections at higher masses, however it is difficult to say without properly simulating the background.
 The number of background events per bin is then given below.
 
 \begin{equation}
@@ -128,15 +131,26 @@ The number of signal events we see is given in equation~\ref{eqn:kaon_signal}.
 For the two body decay rate, it is easy to find the following expression
 
 \begin{equation}
-    \Gamma(K^+ \rightarrow \mu^+ \nu_\mu) = \frac{1}{8\pi m_K^3}\mathnormal{f}_K^2 \left|V_{us}\right|^2 G_F^2 m_\mu^2 \left(m_K^2 - m_\mu^2\right)^2
+    \Gamma(K^+ \rightarrow \mu^+ \nu_\mu) = \frac{1}{8\pi m_K^3}\mathnormal{f}_K^2 \left|V_{us}\right|^2 G_F^2 m_\mu^2 \left(m_K^2 - m_\mu^2\right)^2\textrm{.}
 \end{equation}
+
+\noindent In the limit of $m_\phi \ll m_\mu$, we find the following behaviour
+
+\begin{equation}
+    \frac{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu \phi)}{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu)} = \frac{1}{4\pi^2} \ln\left(\frac{m_K^2 - m_\mu^2}{2 m_\phi m_\mu} \right)\textrm{.}
+\end{equation}
+
+\noindent For $m_\phi = 100\textrm{MeV}$, the branching ratio is $\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \phi) = 1.32\times 10^{-10} \left(g_{\phi\mu}/10^{-4}\right)^2$.
 
 Combining the number of signal events with the number of background events in each background region, we find the limits to follow those in Fig.~\ref{fig:kaon_limits}.
 We also assumed an overall signal efficiency of $0.5$.
 Since the kaons are boosted, a rough approximation on the maximum angle from the beam any decay products can have is $\theta_\textrm{max} \approx \frac{m_K/2}{p_K} \approx 3\textrm{mrad}$, which stays within the calorimeter's $8.5\textrm{mrad}$ coverage, so most of the decay products producted should pass through the detector.
 To be safe though, we choose the efficiency above.
-Currently, the sensitivity discrepancy slightly above the pion mass is hard to justify, and may indicate that we do not indicate that background in this region correctly.
-We are working on correcting this.
+Above the pion mass, the sensitivity drastically decreases.
+This is due to the background which we can only poorly estimate in this region until a proper simulation of the background is done, instead of just smearing the events uniformly over the available range.
+Right below the pion mass, there is also a downturn visible.
+The Dalitz decay quickly vanishes near the kinematic limit, however the other relevant backgrounds in this region are unknown, with the SM process $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ only being measured for $m_{ee} > 150\textrm{MeV}$.
+To not mislead the reader here, we simply remove a slice of the parameter space from $130\textrm{MeV}$ up to the pion mass, as there is a relevant background source there, it is just currently unknown how it may affect the sensitivity limits.
 
 \begin{figure}[h]
     \centering
