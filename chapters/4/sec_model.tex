@@ -31,9 +31,17 @@ We then have a coupling between fermions and the dark photon with strength $\eps
 
 This may look like the coupling to each lepton is the same, and it is.
 It is not immeditately clear that one can have an assymetric effect across leptons on the charged proton radius, or the magnetic moment.
-The minimal model proved sufficient for an explanation of $(g-2)_\mu$, but did not quite work the proton radius anomaly.
 However in the case where a muon is concerened, the virtual particles may be much more massive.
 For this reason, the muon is much more sensitive to undiscovered particles, such as an $A'$, than the electron, regardless of the couplings being the same between muon and electron.\improvement{more detail on coupling}
+The minimal model proved sufficient for an explanation of $(g-2)_\mu$, but did not quite work for the proton radius anomaly.
+A plot of the current limits of the parameter space in $\epsilon^2$ and $m_{A'}$ is shown in Fig.\ \ref{fig:darkphoton_limits}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.6\textwidth]{Figures/limits/darkphoton_limits}
+    \caption{Current limits on the parameter space of the dark photon from \cite{Batley:2015lha}. The black band displays the region where the minimal dark photon model could explain $(g-2)_\mu$, and the blue line indicates the region ruled out by measurements of $(g-2)_e$. Recently NA48/2 has ruled out the possibility of the minimal model solving the anomalous magnetic moment of the muon.}
+    \label{fig:darkphoton_limits}
+\end{figure}
 
 \subsection{Dark Scalar}
 The Lagrangian we use for the addition of a scalar ends up looking like the Higgs' Lagrangian after electroweak symmetry breaking, which couples to leptons.
@@ -41,18 +49,23 @@ We add a real scalar with Yukawa couplings to the three generations of mass, and
 This obviously requires picking a mass scale for the coupling, one of two free parameters of the theory.
 The other free parameter is, as usual, the mass of the new particle.
 Choosing the coupling to scale proportionally to the mass may give a natural way to couple the new scalar more strongly to the $\mu$ than the $e$.
-The full Lagrangian is given below in, equation \ref{eqn:scalar_lagrangian}: \unsure{below vs in?} 
+The full Lagrangian is given below,
 \begin{equation}
 \label{eqn:scalar_lagrangian}
 \Lagr = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m_\phi^2 \phi^2 + \sum_{\ell=e,\mu,\tau} g_{\phi \ell}~\bar{\ell}^\lambda~\phi~\ell^\lambda + g_{\phi p}~\bar{p}~\phi~p + \Lagr_{\textrm{SM}}
 % g_{\phi e}\bar{e}^\lambda e^\lambda \phi
-\end{equation}\unsure{Sum over leptons?} 
+\end{equation}
 where $\ell$ takes on the lepton fields, the couplings in $g_{\phi \ell}$ are the couplings between the scalar and the corresponding lepton, $p$ is the proton field, $g_{\phi p}$ is the coupling between the scalar and the proton, $\Lagr_\textrm{SM}$ is the Standard Model Lagrangian, $\lambda$ indicates spinor indices, and $g_{\phi \ell} \propto m_\ell$.
 We usually fix the coupling to the $\mu$ in this thesis, however we will also fix the coupling to the $\tau$ in one portion so it is convenient to write the couplings as:
 \begin{equation*}
 \label{eqn:coupling_mass}
 g_{\phi \ell} = \left(g_{\phi e}, g_{\phi \mu}, g_{\phi \tau}\right) = g_{\phi \mu} \left( \frac{m_e}{m_\mu}, 1, \frac{m_\tau}{m_\mu} \right) = g_{\phi \tau} \left( \frac{m_e}{m_\tau}, \frac{m_\mu}{m_\tau}, 1 \right)
 \end{equation*}
+
+It is important to point out that this Lagrangian does not possess $SU(2) \times U(1)$ gauge invariance, as the kinetic term does not use any covariant derivatives involving a gauge field.
+No quartic self interaction of the scalar is written down, which hints that this theory is not renormalizable as well.
+However, a UV complete version of this model, also respecting $SU(2) \times U(1)$ gauge invariance, has been worked out starting from a leptonic-specific two Higgs-doublet model and is currently a work in progress \cite{Batell:2015unpub}.
+This allows one to extend the Higgs sector such that there is one doublet that, representing a light scalar state that would be accessible, which couples only to leptons, while the other doublet couples only to quarks.
 
 Of most importance is the relative magnitude of couplings.
 We would like a weak coupling to electrons such that we do not disturb the proton radius as extracted in the electron-proton scattering experiments, and measurement of the atomic energy levels of electronic Hydrogen.
