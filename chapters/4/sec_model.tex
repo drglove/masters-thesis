@@ -1,6 +1,6 @@
 \section{Models}
 
-Keeping in mind that the discrepancy of the proton-charge radius is about $4\%$, we must be interested in small couplings \cite{Carlson:2015jba}.
+Keeping in mind that the discrepancy of the proton-charge radius is about $4\%$, we must be interested in rather small couplings \cite{Carlson:2015jba}.
 Our primary model of interest is the addition of a scalar, $\phi$, with a weak, asymmetric coupling to leptons violating lepton universality.
 We are also interested in the dark photon model, as it provides a similar low mass mediator that is weakly coupled to leptons.
 In the dark photon model, this is instead a vector as opposed to a scalar.
@@ -39,9 +39,9 @@ Taking the dark photon to decay to SM particles, we have the partial width of th
     c \tau_{A' \rightarrow e^+ e^-} \approx 0.8\textrm{mm} \left(\frac{10^{-4}}{\epsilon}\right)^2 \frac{10\textrm{MeV}}{m_{A'}}\textrm{.}
 \end{equation}
 
-\noindent For most of the area of the parameter space near the current limits, this gives decays that will travel a finite distance, which experiments could look for as displaced vertices.
+\noindent One can see that for small $\epsilon$, the additional signature of the $A'$ could be its displace decay, away from the point where it has been produced.
 
-In this model, it may look like the coupling to each lepton is the same, and it is.
+In this model, the coupling to each lepton is the same.
 It is not immeditately clear that one can have an assymetric effect across leptons on the charged proton radius, or the magnetic moment.
 However in the case where a muon is concerened, the virtual particles may be much more massive.
 For this reason, the muon is much more sensitive to undiscovered particles, such as an $A'$, than the electron, regardless of the couplings being the same between muon and electron.
@@ -56,7 +56,7 @@ A plot of the current limits of the parameter space in $\epsilon^2$ and $m_{A'}$
 \end{figure}
 
 \subsection{Dark Scalar}
-The Lagrangian we use for the addition of a scalar ends up looking like the Higgs' Lagrangian after electroweak symmetry breaking, which couples to leptons.
+The Lagrangian we use for the addition of a scalar will replicate some features of the Higgs' Lagrangian after electroweak symmetry breaking, which couples to leptons.
 We add a real scalar with Yukawa couplings to the three generations of mass, and a standard kinetic term, where the coupling strength is proportional to the mass of the lepton.
 This obviously requires picking a mass scale for the coupling, one of two free parameters of the theory.
 The other free parameter is, as usual, the mass of the new particle.
@@ -74,10 +74,9 @@ We usually fix the coupling to the $\mu$ in this thesis, however we will also fi
 g_{\phi \ell} = \left(g_{\phi e}, g_{\phi \mu}, g_{\phi \tau}\right) = g_{\phi \mu} \left( \frac{m_e}{m_\mu}, 1, \frac{m_\tau}{m_\mu} \right) = g_{\phi \tau} \left( \frac{m_e}{m_\tau}, \frac{m_\mu}{m_\tau}, 1 \right)
 \end{equation*}
 
-It is important to point out that this Lagrangian does not possess $SU(2) \times U(1)$ gauge invariance, as the kinetic term does not use any covariant derivatives involving a gauge field.
-No quartic self interaction of the scalar is written down, which hints that this theory is not renormalizable as well.
-However, a UV complete version of this model, also respecting $SU(2) \times U(1)$ gauge invariance, has been worked out starting from a leptonic-specific two Higgs-doublet model and is currently a work in progress \cite{Batell:2015unpub}.
-This allows one to extend the Higgs sector such that there is one doublet that, representing a light scalar state that would be accessible, which couples only to leptons, while the other doublet couples only to quarks.
+It is important to point out that this Lagrangian does not possess $SU(2) \times U(1)$ gauge invariance, as Yukawa interactions with leptons explicitly break this gauge symmetry. 
+This hints that this theory is not UV complete, and at best represents a low-energy limit of a more consistent theory.
+However, a UV complete version of this model, respecting $SU(2) \times U(1)$ gauge invariance, has been worked out which involves a SM neutral light scalar and a leptonic-specific two Higgs-doublet model \cite{Batell:2015unpub}.
 
 With this model, the partial decay widths of the $\phi$ to pairs of leptons goes as
 
@@ -101,12 +100,10 @@ Of most importance is the relative magnitude of couplings.
 We would like a weak coupling to electrons such that we do not disturb the proton radius as extracted in the electron-proton scattering experiments, and measurement of the atomic energy levels of electronic Hydrogen.
 Indeed the point here is to have a stronger coupling to the muon with the scalar, than that of the electron with the scalar.
 Taking the couplings to be Higgs-like gives the size of any physical effect to be approximately some power of $(m_\mu/m_e) \approx 210$ times larger for the muon than to the electron.
-Going to higher mass scales allows easier probing with this model.
-If one is able to access the $\tau$ lepton, the coupling becomes large enough for a deviation to be seen; in particular, a resonance at the mass of the scalar mediator.
+Therefore, it is advantageous to produce such a scalar by radiating it off the heaviest lepton kinematically accessible in any given process.
 
 It is also possible to allow for a pseudo-scalar coupling to be introduced, by introducing another set of couplings to the pseudo-scalar field and sandwiching an $i\gamma^5$ between spinors.
 While it is outside the scope of this thesis to examine this, we will note here that the scalar and pseudo-scalar have corrections to the $(g-2)_\mu$ with opposing signs.
-For small masses of the mediator however, the degree of fine tuning required is large enough that we can ignore the pseudo-scalar case if desired, as the correction from the scalar case alone is small enough to give a desirable $(g-2)_\mu$ correction.
 This is given in more detail in \cite{Carlson:2015jba}.
 
 Since the phenomena we are trying to describe are the anomalous magnetic moment of the muon and the muonic atom's Lamb shift, we will discuss how the scalar model modifies these in detail.
@@ -132,4 +129,4 @@ The muonic atom's Lamb shift correction from the addition of a scalar can be fou
 \noindent where $f(x) = x^4/(1+x)^4$, $a = 1/(\alpha m_{\mu p})$ is the Bohr radius of the $\mu\textrm{H}$ system, and $m_{\mu p}$ is the reduced mass of the system.
 While it has proved to be a good motivation, and one can extract expectected sensitivities with a constraint from the measurement of $r_p$, there is a degeneracy in this expression that proves difficult to work around.
 Since the coupling to the proton must enter, we only see the product $g_{\phi\mu} g_{\phi p}$ enter in the above expression, which makes it difficult to place sensitivity limits on $g_{\phi\mu}$ without making assumptions on the coupling to the proton.
-For this reason, $(g-2)_\mu$ proves to provide better context for the sensitivity limits we will place.
+For this reason, $(g-2)_\mu$ proves to provide better context for the sensitivity limits we will explore.
