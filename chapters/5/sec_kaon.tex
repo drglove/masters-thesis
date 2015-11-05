@@ -1,5 +1,5 @@
-\section{Sensitivty Reach of on NA48/2 and NA62 from Charged Kaon Decays}
-In contrast to the previous section on muon decay, the calculations of kaon decay are relatively easy to handle and can be done even analytically.
+\section{Sensitivity Reach of on NA48/2 and NA62 from Charged Kaon Decays}
+In contrast to the previous section on muon decay, the calculations of kaon decay are relatively easy to handle and can be done analytically.
 We will still make use of \feyncalc in order to compute the traces, and \mathematica to compute the final state integration, although it is not necessary under certain approximations and is genuinely computable by hand.
 While NA48/2 and NA62 will not reach a number of kaon decays comparable to the muon decays, we still have $2.0 \times 10^{11}$ $K^+$ decays at NA48/2 and an expected $9.0 \times 10^{12}$ $K^+$ decays at NA62.
 These numbers are large enough to put strong bounds on the scalar, but likely not as strong as those from \mueee.
@@ -46,9 +46,9 @@ Outside of this range, the other irreducible backgrounds which take over are spl
 For $150\textrm{MeV} < m_{ee} < 2m_\mu$, the dominant decay is $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ and has a measured branching ratio of $7.06 \times 10^{-8}$.
 Below $150\textrm{MeV}$, this background is hard to measure due to cuts made to keep the lepton pair mass above the pion threshold.
 Currently it is not known if NA62 will be able to study lepton pairs with a mass below the pion mass.
-Since we do not know the distribution of these events in $m_{ee}$, we take them to be uniformly distributed from the cut at $150\textrm{MeV}$ up to the kinematic limit of $m_K - m_\mu$.
-This can be improved by using Monte Carlo techniques to generate this background distribution as well.
-The result of using this distribution compared to the true one, likely yields an over-sensitivity projections at lower masses, and under-sensitivity projections at higher masses, however it is difficult to say without properly simulating the background.
+Since we do not know the distribution of these events in $m_{ee}$, for this study we take a simplistic assumption of them being uniformly distributed from the cut at $150\textrm{MeV}$ up to the kinematic limit of $m_K - m_\mu$.
+This can be improved by using Monte Carlo techniques to generate this background distribution as well, or by calculating the distribution directly.
+The result of using this distribution compared to the true one, likely yields an over-sensitivity projections at lower masses, and under-sensitivity projections at higher masses.
 The number of background events per bin is then given below.
 
 \begin{equation}
@@ -140,7 +140,10 @@ For the two body decay rate, it is easy to find the following expression
     \frac{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu \phi)}{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu)} = \frac{1}{4\pi^2} \ln\left(\frac{m_K^2 - m_\mu^2}{2 m_\phi m_\mu} \right)\textrm{.}
 \end{equation}
 
-\noindent For $m_\phi = 100\textrm{MeV}$, the branching ratio is $\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \phi) = 1.32\times 10^{-10} \left(g_{\phi\mu}/10^{-4}\right)^2$.
+\noindent For $m_\phi = 100\textrm{MeV}$, the branching ratio is
+\begin{equation}
+    \textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu \phi) = 1.32\times 10^{-10} \left(\frac{g_{\phi\mu}}{10^{-4}}\right)^2\textrm{.}
+\end{equation}
 
 Combining the number of signal events with the number of background events in each background region, we find the limits to follow those in Fig.~\ref{fig:kaon_limits}.
 We also assumed an overall signal efficiency of $0.5$.
