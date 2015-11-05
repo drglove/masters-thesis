@@ -113,7 +113,7 @@ A plot of the branching ratio to a dimuon pair is shown in Fig.\ \ref{fig:br_phi
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.6\textwidth]{Figures/misc/br_phimumu}
-    \caption{Typical branching ratios of scalar $\phi$ to a dimuon pair. Here we have taken the coupling strength between the muon and the scalar to be $g_{\phi \mu} = 10^{-4}$. Going slightly above the threshold mass to produce pairs of muons gives a branching ratio of $1$ almost immediately.}
+    \caption{Typical branching ratios of the scalar $\phi$ to a dimuon pair. Here we have taken the coupling strength between the muon and the scalar to be $g_{\phi \mu} = 10^{-4}$. Going slightly above the threshold mass to produce pairs of muons gives a branching ratio of $1$ almost immediately.}
     \label{fig:br_phimumu}
 \end{figure}
 
@@ -139,9 +139,24 @@ A convenient form for the contribution from the addition of a scalar is given be
     \xi(x) &= \int_0^1 \frac{(1-z)^2(1+z)}{(1-z)^2 + x^2z} \,dz
 \end{align}
 
-\noindent For the case $m_\phi \ll m_\mu$, the integral $\xi \rightarrow 3/2$, giving an $m_\phi$ independent constraint on the coupling constant in this region.
+\noindent This form of $\Delta a_\mu$ will be useful when plotting our proposed sensitivity limits.
+For the case $m_\phi \ll m_\mu$, the integral $\xi \rightarrow 3/2$, giving an $m_\phi$ independent constraint on the coupling constant in this region.
 When we are in the region $m_\phi \gg m_\mu$, the contribution at one loop scales as $\Delta a_\mu \propto (m_\mu/m_\phi)^2$, or similarly, the constraining coupling must scale as $g_{\phi\mu} \propto m_\phi / m)\mu$.
-This form of $\Delta a_\mu$ will be useful when plotting our proposed sensitivity limits.
+Overall we have the following asymptotic behaviour
+
+\begin{equation}
+    \Delta a_\mu = \frac{\alpha}{2\pi} \left(\frac{g_{\phi \mu}}{e}\right)^2
+    \begin{cases}
+        \frac{3}{2}, & m_\phi \ll m_\mu \\
+        \frac{m_\mu^2}{m_\phi^2} \left(2\ln\left(\frac{m_\phi}{m_\mu}\right) - \frac{7}{6}\right), & m_\phi \gg m_\mu
+    \end{cases}\textrm{,}
+\end{equation}
+
+\noindent and at a specific mass
+
+\begin{equation}
+    \Delta a_\mu\left(m_\phi = 50\textrm{MeV}\right) = \frac{\alpha}{2\pi} \left(\frac{g_{\phi\mu}}{10^{-4}}\right)^2 8.6\times 10^{-8}\textrm{.}
+\end{equation}
 
 The muonic atom's Lamb shift correction from the addition of a scalar can be found through first-order perturbation theory, and is given by \cite{TuckerSmith:2010ra, Carlson:2015jba}
 
