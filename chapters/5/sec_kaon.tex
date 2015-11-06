@@ -1,4 +1,4 @@
-\section{Sensitivity Reach of on NA48/2 and NA62 from Charged Kaon Decays}
+\section{Sensitivity Reach of NA48/2 and NA62 from Charged Kaon Decays}
 In contrast to the previous section on muon decay, the calculations of kaon decay are relatively easy to handle and can be done analytically.
 We will still make use of \feyncalc in order to compute the traces, and \mathematica to compute the final state integration, although it is not necessary under certain approximations and is genuinely computable by hand.
 While NA48/2 and NA62 will not reach a number of kaon decays comparable to the muon decays, we still have $2.0 \times 10^{11}$ $K^+$ decays at NA48/2 and an expected $9.0 \times 10^{12}$ $K^+$ decays at NA62.
@@ -46,14 +46,11 @@ Outside of this range, the other irreducible backgrounds which take over are spl
 For $150\textrm{MeV} < m_{ee} < 2m_\mu$, the dominant decay is $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ and has a measured branching ratio of $7.06 \times 10^{-8}$.
 Below $150\textrm{MeV}$, this background is hard to measure due to cuts made to keep the lepton pair mass above the pion threshold.
 Currently it is not known if NA62 will be able to study lepton pairs with a mass below the pion mass.
-Since we do not know the distribution of these events in $m_{ee}$, for this study we take a simplistic assumption of them being uniformly distributed from the cut at $150\textrm{MeV}$ up to the kinematic limit of $m_K - m_\mu$.
+Since we do not know the distribution of these events in $m_{ee}$, for this study we take a simplistic assumption of them being distributed up to the kinematic limit of $m_K - m_\mu$ according to the phase space factor.
+We reweight the background by the phase space using the distribution of background events shown in Fig.\ \ref{fig:mu_eeenunu_spectrum}, stretched up to the kinematic limit relevant for the kaon decay, and enforce that the normalization corresponds to the branching ratio above $m_{ee} > 150\textrm{MeV}$.
+This background distribution is used because the $e^+ e^-$ pairs in $\mu^+ \rightarrow e^+ \nu_e \bar{\nu_\mu} e^+ e^-$ come mostly from final state radiation, similar to the pairs produced in $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$, so the backgrounds should be similar.
 This can be improved by using Monte Carlo techniques to generate this background distribution as well, or by calculating the distribution directly.
 The result of using this distribution compared to the true one, likely yields an over-sensitivity projections at lower masses, and under-sensitivity projections at higher masses.
-The number of background events per bin is then given below.
-
-\begin{equation}
-B(m_{ee}) = N_{K^+}~\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-) \frac{\sigma_{m_{ee}}}{(m_K - m_\mu) - 150\textrm{MeV}}
-\end{equation}
 
 When the muon decay channel turns on for the scalar, we must then look at the background due to $K^+ \rightarrow \mu^+ \nu_\mu \mu^+ \mu^-$.
 Currently this is not observed and there are only limits on the branching ration of $< 4.1 \times 10^{-7}$~\cite{Agashe:2014kda}.
@@ -95,7 +92,7 @@ An example plot is shown for $m_\phi = 100\textrm{MeV}$ in Fig.~\ref{fig:dalitz_
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/kaon/dalitz}
-    \caption{Dalitz plot for charged kaon decay. The horizontal line corresponds to the resonant condition $m_{\mu\phi}^2 = m_\mu^2$. As the plot gets lighter, the density gets higher, showing that the density of the amplitude increases as one approaches the resonant condition. Here it is not possible to hit the resonance, but as $m_\phi$ gets very small, we get close to it.}
+    \caption{Dalitz plot for charged kaon decay. The horizontal line corresponds to the resonant condition $m_{\mu\phi}^2 = m_\mu^2$. As the scalar  gets lighter, the density gets higher, showing that the density of the amplitude increases as one approaches the resonant condition. Here it is not possible to hit the resonance, but as $m_\phi$ gets very small, we get close to it.}
     \label{fig:dalitz_plot}
 \end{figure}
 
@@ -115,7 +112,7 @@ Carrying out this process yields the width as a function of mass $m_\phi$, and c
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/kaon/kaon_width}
-    \caption{Partial width of $K^+ \rightarrow \mu^+ \mu_\nu \phi$. The coupling was set to $g_{\phi\mu}=1$. There is an increased rate at extremely low energies, and a quick downturn near the kaon less the muon mass, where the phase space closes rapidly.}
+    \caption{Partial width of $K^+ \rightarrow \mu^+ \nu_\mu \phi$. The coupling was set to $g_{\phi\mu}=1$. There is an increased rate at extremely low energies, and a quick downturn near the kaon less the muon mass, where the phase space closes rapidly.}
     \label{fig:kaon_width}
 \end{figure}
 
@@ -123,7 +120,7 @@ Finally, we can use the signal branching ratio combined with our backgrounds to 
 The number of signal events we see is given in equation~\ref{eqn:kaon_signal}.
 
 \begin{equation}
-    S = N_{K^+}~\textrm{BR}(K^+ \rightarrow \mu^+ \mu_\nu) \frac{\Gamma(K^+ \rightarrow \mu^+ \mu_\nu \phi)}{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu)}
+    S = N_{K^+}~\textrm{BR}(K^+ \rightarrow \mu^+ \nu_\mu) \frac{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu \phi)}{\Gamma(K^+ \rightarrow \mu^+ \nu_\mu)}
     \label{eqn:kaon_signal}
 \end{equation}
 
@@ -149,15 +146,12 @@ Combining the number of signal events with the number of background events in ea
 We also assumed an overall signal efficiency of $0.5$.
 Since the kaons are boosted, a rough approximation on the maximum angle from the beam any decay products can have is $\theta_\textrm{max} \approx \frac{m_K/2}{p_K} \approx 3\textrm{mrad}$, which stays within the calorimeter's $8.5\textrm{mrad}$ coverage, so most of the decay products producted should pass through the detector.
 To be safe though, we choose the efficiency above.
-Above the pion mass, the sensitivity drastically decreases.
-This is due to the background which we can only poorly estimate in this region until a proper simulation of the background is done, instead of just smearing the events uniformly over the available range.
-Right below the pion mass, there is also a downturn visible.
-The Dalitz decay quickly vanishes near the kinematic limit, however the other relevant backgrounds in this region are unknown, with the SM process $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ only being measured for $m_{ee} > 150\textrm{MeV}$.
-To not mislead the reader here, we simply remove a slice of the parameter space from $130\textrm{MeV}$ up to the pion mass, as there is a relevant background source there, it is just currently unknown how it may affect the sensitivity limits.
+Above the pion mass, the sensitivity starts to increase as the Dalitz background disappears.
+The Dalitz decay quickly vanishes near the pion mass, however the other relevant backgrounds in this region are unknown, with the SM process $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ only being measured for $m_{ee} > 150\textrm{MeV}$, as discussed earlier.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/limits/kaon_all}
-    \caption{Limits on scalar coupling to muon from charged kaon decays. Blue lines correspond to NA48/2 and red to NA62. The three regions each correspond to a different background source, with the Dalitz decay of the $\pi^0$ being dominant below the $\pi^0$ mass, and the irreducible backgrounds to either $\mu^+ \nu_\mu e^+ e^-$ below $2m_\mu$, or $\mu^+ \nu_\mu \mu^+ \mu^-$ above this range to the kinematic limit.}
+    \caption{Limits on scalar coupling to muon from charged kaon decays. Blue lines correspond to NA48/2 and red to NA62. Below the pion mass, the Dalitz background and the $K^+ \rightarrow \mu^+ \nu_\mu e^+ e^-$ background are both present. The Dalitz background is not present above the pion mass, where the irreducible backgrounds to either $\mu^+ \nu_\mu e^+ e^-$ for $m_{ee} < 2m_\mu$, or $\mu^+ \nu_\mu \mu^+ \mu^-$ for $m_{ee} > 2m_\mu$, take over.}
     \label{fig:kaon_limits}
 \end{figure}
