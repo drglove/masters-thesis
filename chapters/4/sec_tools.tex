@@ -4,7 +4,7 @@ In order to understand the limits we want to impose on the parameters of our mod
 This also requires that we simulate appropriate background processes which can masquerade as signal.
 To achieve this, one has to integrate the square of the sum of each matrix element.
 In some cases, such as kaon decay which we will compute later, this is possible to do by hand, at least in some approximation.
-However, while the matrix elements are easy to write down, usually these processes can be quite tedious and very difficult to intergate.
+However, while the matrix elements are easy to write down, usually these processes can be quite tedious and very difficult to integrate.
 For these cases, we will make use of \emph{event generators}, which effectively sample the allowed phase space of the matrix elements by Monte-Carlo in order to perform the integration.
 
 Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{Mertig:1990an}, and \mgamcnlo \cite{Alwall:2011uj,Alwall:2014hca}.
@@ -15,7 +15,7 @@ The UFO defines a portable format for a model, allowing multiple event generator
 Most important is that \madgraph can utilize the resulting model simply by putting the UFO model within the appropriate location within \madgraph.
 \feyncalc is useful when assisting computations by hand, which is ultimately used for computing traces of many $\gamma$ matrices.
 
-There are other tools that could further improve our limits which were not used: these include \pythia \cite{Sjostrand:2007gs}, which would handle the hard event generation instead of the generator provided by \madgraph, hadronization (which is not likely to be of use), initial and final state radion; and \delphes \cite{Selvaggi:2014mya}, providing a proper detector simulation at a level that is not as demanding as \geant \cite{Agostinelli:2002hh}. For our purposes of simply estimating limits, these are for the most part not necessary.
+There are other tools that could further improve our limits which were not used: these include \pythia \cite{Sjostrand:2007gs}, which would handle the hard event generation instead of the generator provided by \madgraph, hadronization (which is not likely to be of use), initial and final state radiation; and \delphes \cite{Selvaggi:2014mya}, providing a proper detector simulation at a level that is not as demanding as \geant \cite{Agostinelli:2002hh}. For our purposes of simply estimating limits, these are for the most part not necessary.
 
 \subsection{\feynrules}
 \feynrules was developed as a toolkit to define new fields, write down a given model's Lagrangian, and automatically compute the Feynman rules.
@@ -23,7 +23,7 @@ The only requirements of the model are that the Lagrangian satisfy locality, Lor
 It also will analytically compute simple decay widths for $1 \rightarrow 2$ processes, and branching ratios.
 This toolkit works as a \mathematica package.
 
-Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields, and request the Feynman rules be calculated and output to the UFO format, with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the Standard Model Lagrangian already, so we simply need to append our new Lagrangian to this buitin one.
+Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields, and request the Feynman rules be calculated and output to the UFO format, with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the Standard Model Lagrangian already, so we simply need to append our new Lagrangian to this built-in one.
 At the same time, we have \feynrules calculate the decay widths of each new particle, and update the model file with these using the calls to \texttt{vertices = FeynmanRules[L]}, \texttt{decays = ComputeWidths[vertices]}, and \texttt{UpdateWidths[decays]}.
 
 Our model files for both the scalar and dark photon models are included in the appendix \ref{app:model_files} and are the only input into the generation of our events, besides the definition of the process of interest.
@@ -58,7 +58,7 @@ While it would be possible to leverage \madgraph for calculations of the new phy
 
 As is the case with any Feynman diagram calculation, any width or cross-section computation must include all relevant Feynman diagrams.
 \madgraph automatically will generate these given the Feynman rules defined, taking into account restrictions placed by the user, such as restricting a certain particle to be produced on-shell before decaying.
-Diagrams are generated efficienctly by recursively merging sub-diagrams.
+Diagrams are generated efficiently by recursively merging sub-diagrams.
 Production of Feynman diagrams starts by treating all incoming particles as outgoing antiparticles.
 This simplifies the diagram generation and is easy to reverse as a final step.
 Next, all particles are grouped, with the maximum group size being the maximum degree of interaction, and replacing each group with its resulting particle if applicable, else it is discarded.
@@ -81,7 +81,7 @@ The parameters that one can tune for the generation of events falls under two fi
 The \texttt{param\_card} controls physics parameters, such as the mass of various particles, and their couplings, both for the SM and any new physics models.
 \texttt{run\_card} controls parameters related to the experiment, such as the energies of the particles being collided, which parton distribution functions to use if needed, and any relevant cuts to make at generation time, among other options.
 
-By changing the physics paramters for our new model, we can scan the parameter space allowed.
+By changing the physics parameters for our new model, we can scan the parameter space allowed.
 For our purposes, the scaling of the relevant cross-sections and partial decay widths with the coupling $g_{\phi\ell}$ is straightforward.
 This is not the case with the mass of the $\phi$, and we have written a Python package which can generate \madgraph output as it scans across the mass regime of interest.
 
