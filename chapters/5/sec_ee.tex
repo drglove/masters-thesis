@@ -3,6 +3,9 @@ For $e^+ e^-$ collisions, we make use of \madgraph again to handle our signal an
 Most of what was said about generation of events for the muon events holds here.
 
 The total integrated luminosities at \belle is taken to be $1040.86fb^{-1}$, with \babar half this, and \belletwo to be expected to have around $100$ times this.
+All of the \babar and \belle data is already taken and stored.
+This means that an analysis performed by the experiments of the data already taken could cover a large area of the parameter space.
+The large integrated luminosities used will allow very competitive sensitivity limits compared to the other experiments discussed.
 Since the centre of mass energy reaches $10.58\textrm{GeV}$, we can access the $\tau$ leptons here, which in our model have a very strong coupling to the scalar due to their large mass of $1.777\textrm{GeV}$.
 There are two regions of interest in this scenario for the mass of the mediator: below, and above the threshold for the scalar to decay to muons.
 Below this it can only decay to an $e^+ e^-$ pair, so the overall process for $m_\phi < 2m_\mu$ is
@@ -11,10 +14,10 @@ Below this it can only decay to an $e^+ e^-$ pair, so the overall process for $m
     e^+ + e^- \rightarrow \tau^+ + \tau^- + e^+ + e^-
 \end{equation}
 
-\noindent while above this threshold we decay almost exclusively to muons.
+\noindent while above this threshold we decay almost exclusively to muons,
 
 \begin{equation}
-    e^+ + e^- \rightarrow \tau^+ + \tau^- + \mu^+ + \mu^-
+    e^+ + e^- \rightarrow \tau^+ + \tau^- + \mu^+ + \mu^-\textrm{.}
 \end{equation}
 
 \subsection{Backgrounds}
@@ -47,6 +50,9 @@ A sample Feynman diagram for the signal is shown in Fig.\ \ref{fig:ee_tautaull_s
     \caption{One Feynman diagram for the signal process $e^+ e^- \rightarrow \tau^+ \tau^- \ell^+ \ell^-$. The scalar must live on-shell before decaying promptly to a pair of leptons.}
     \label{fig:ee_tautaull_scalar}
 \end{figure}
+
+As with the other signals we have examined with an $e^+ e^-$ pair in the final state, we must take into account the reduced number of signal events due to the branching ratio to the process $\phi \rightarrow \gamma \gamma$.
+This is only important for masses of the scalar just below the dimuon production threshold.
 
 For our signal, since this is now a collision scenario and not a decay, we must weight our total number of events by the cross section determined by \madgraph.
 The width we have chosen here is also just the energy resolution of the detector listed in the technical design report for \belletwo \cite{Abe:2010gxa} as
@@ -82,3 +88,13 @@ A simple analysis at \babar and \belle could already exclude a large portion of 
     \caption{Scalar limits from $e^+ e^-$ collisions at B-factories. Green, blue, and red represent \babar, \belle, and \belletwo respectively. The muon channel can be seen to turn on, where we remove a small portion of the parameter space due to poor background simulation in the vicinity of the very soft dimuon pair. At this point the $\phi \rightarrow \gamma \gamma$ decay is strongest also, and reduces the sensitivity right before the dimuon channel opens.}
     \label{fig:ee_limits}
 \end{figure}
+
+It is also possible to look for the signal
+
+\begin{equation}
+    e^+ + e^- \rightarrow \mu^+ + \mu^- + \phi,~\phi \rightarrow \mu^+ + \mu^-~\textrm{.}
+\end{equation}
+
+\noindent The benefit of searching for such a signal is that we could reach masses of the scalar up to $10~\textrm{GeV}$.
+Unfortunately, this also comes with the drawback of a reduced number of signal events compared to the tau channel, since $g_{\phi\mu} / g_{\phi\tau} = m_\mu / m_\tau$.
+We will not examine the properties of this signal in this thesis, but it is possible to do with the tools developed so far.
