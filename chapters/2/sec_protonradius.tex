@@ -1,10 +1,10 @@
 \section{Proton Radius Puzzle}
 As has been mentioned a few times already in this thesis, if one does experiments to extract the proton radius using $\mu\textrm{H}$, a drastically different result is obtained compared to simple $H$.
-In this section we will summarize how this is extracted, and potential solutions, including the scalar we put forward, following mostly \cite{Carlson:2015jba}.
+In this section we will summarize how this is extracted and potential solutions, including the scalar we put forward, following mostly~\cite{Carlson:2015jba}.
 
 First, there are multiple methods which are currently used to extract the proton radius from electronic Hydrogen, H.
-These typically have large error bars, but do agree with each other, to yield a combined uncertainty of $\sim 0.6\%$.
-The experiments to extract the proton radius in H are either done using electron-proton scattering, or by measuring energy levels of the Hydrogen system.
+These methods typically have large error bars, but are consistent with each other, and yield a combined uncertainty of $\sim 0.6\%$.
+The experiments to extract the proton radius from H are either done using electron-proton scattering, or by measuring energy levels of the Hydrogen system.
 
 For non-relativistic scattering experiments, the differential cross section is given by
 
@@ -13,16 +13,16 @@ For non-relativistic scattering experiments, the differential cross section is g
 \end{equation}
 
 \noindent with the first term being the typical scattering of an electron off of a point-like proton, and the second term correcting for the finite size of the proton.
-This second term is named a form factor and depends on the momentum transfer.
+The second term is called a \textit{form factor} and depends on the momentum transfer between the electron and proton.
 Moving to a relativistic system, as is required for any electron-proton scattering experiment, we find a similar expression
 
 \begin{equation}
     \frac{d\sigma}{d\Omega} = \frac{4 \alpha^2 \cos^2(\theta/2)}{Q^4} \frac{E'^3}{E} \times \frac{1}{1+\tau}\left(G_E^2(Q^2) + \frac{\tau}{\epsilon}G_M^2(Q^2)\right)
 \end{equation}
 
-\noindent with $\tau = Q^2/4M^2$ and $1/\epsilon = 1 + 2(1+\tau)\tan^2(\theta/2)$, with $E'$ and $E$ being the outgoing and incoming energies of the electron in the lab frame.
+\noindent with $\tau = Q^2/4M^2$, $1/\epsilon = 1 + 2(1+\tau)\tan^2(\theta/2)$, and with $E'$ and $E$ being the outgoing and incoming energies of the electron in the lab frame.
 The first term is now the cross section when scattering an unpolarized spin-1/2 electron off of a pointlike spin-0 target.
-Now the form factors are separated into the electric and magnetic components.
+Also the form factors are now separated into the electric and magnetic components.
 
 To define the proton radius, we look to the non-relativistic system and find that $G(Q^2) = 1 - \frac{1}{6}\langle r^2 \rangle Q^2 + \cdots$, which has dependence on the average squared radius.
 Promoting this to a definition, we define the charge radius to be
@@ -31,9 +31,9 @@ Promoting this to a definition, we define the charge radius to be
     R_E^2 \equiv -6 \frac{d G_E}{d Q^2}\rvert_{Q^2=0}
 \end{equation}
 
-\noindent Experiments looking to extract the proton charge radius using $e-p$ scattering must then measure this form factor.
+\noindent Experiments looking to extract the proton charge radius using $e\textrm{-}p$ scattering must measure this form factor.
 
-One can also measure the Lamb shift, the difference between the $2S_{1/2}$ and $2P_{1/2}$ levels.
+One can also measure the Lamb shift, which is the difference between the $2S_{1/2}$ and $2P_{1/2}$ levels.
 Additionally, for the Hydrogen based extraction, the optical transitions are also used.
 The correction to the splittings is given by
 
@@ -41,31 +41,38 @@ The correction to the splittings is given by
     \Delta E = a \textrm{Ry} + b R_E^2
 \end{equation}
 
-\noindent for known coefficients a and b. If one measures two splittings at a time, both the Rydberg constant, and the proton charge radius can be extracted simultaneously, and this is precisely what is done.
-The overall result is $R_E = 0.8775(51)\textrm{fm}$ when the spectroscopic and scattering results are all combined, from CODATA~\cite{Mohr:2012tt}.
+\noindent for known coefficients $a$ and $b$.
+If one measures two splittings at a time, both the Rydberg constant and the proton charge radius can be extracted simultaneously, and this is precisely what is done.
+The overall result is $R_E = 0.8775(51)~\textrm{fm}$ when the spectroscopic and scattering results are all combined, from CODATA~\cite{Mohr:2012tt}.
 
-Similarly, a group performed the same extraction by measuring the Lamb shift of $\mu\textrm{H}$~\cite{Pohl:2010zza,Antognini:1900ns} and found $R_E = 0.84087(39)\textrm{fm}$ after measuring two hyperfine components of the $2S-2P$ transition in muonic Hydrogen.
+Similarly, a group performed the same extraction by measuring the Lamb shift of $\mu\textrm{H}$~\cite{Pohl:2010zza,Antognini:1900ns} and found $R_E = 0.84087(39)~\textrm{fm}$ after measuring two hyperfine components of the $2S-2P$ transition in muonic Hydrogen.
 This is the $7\sigma$ discrepancy between the muonic Hydrogen and electric Hydrogen.
-The experiment involved work at the Paul Scherrer Institute (PSI) with the Charge Radius Experiment with Muonic Atoms (CREMA) experiment.
-A beam of muons are slowed and sent into a target of hydrogen, where they are captured in many high energy states, proceeding to cascade down to the $1S$ or $2S$ state.
-A laser is then shined on the $\mu\textrm{H}$ to bump the long-lived $2S$ states up to the $2P$ states, which readily decay to the $1S$ state giving off a characteristic X-ray.
-The frequency the laser is tuned at will then give the splitting and the proton radius can be read off, provided one has an X-ray detector that can signal when you have tuned the laser correctly.
-The exact details of determining the splitting here an not important to our discussion, so this description shall suffice.
+This work was carried out with the Charge Radius Experiment with Muonic Hydrogen (CREMA) experiment at the Paul Scherrer Institute (PSI).
+A beam of muons are slowed and sent into a target of hydrogen, where they are captured in many high energy states.
+They then proceed to cascade down to the $1S$ or $2S$ state.
+A laser is then shined onto the $\mu\textrm{H}$ to bump the long-lived $2S$ states up to the $2P$ states, which readily decay to the $1S$ state and give off a characteristic X-ray.
+The frequency that the laser is tuned at will then give the splitting and the proton radius can be read off, provided one has an X-ray detector that can signal when you have tuned the laser correctly.
+The exact details of determining the splitting are not important to our discussion, so this description shall suffice.
 
-The conclusion is that there are unknown/unexpected QCD corrections that can provide the necessary correction, or that there is some problem with the extraction of $R_E$ from the collection of electronic measurements, or there is new physics that violates lepton universality.
+The conclusion is that one of three possibilities should account for this discrepancy:
 
-First, the unknown QCD corrections from hadronic behaviour are investigated in \cite{Carlson:2015jba}.
-The two-photon interaction between a muon and the proton involves two unknown functions and a Wick rotation to extract the amplitudes.
-However, during the Wick rotation, one of the integrals used may not converge, leaving over a piece that must be subtracted off which is unknown.
-Limits are placed on this ``subtraction function'' for low $Q^2$, which are not large enough to explain the proton radius, but it is possible to construct the subtraction function in such a way that one can have a large contribution to the proton radius \cite{Miller:2012ne}, although usually with the caveat of a large difference in masses between the proton and neutron being introduced.
+\begin{itemize}
+    \item There are unknown/unexpected QCD corrections that can provide the necessary correction.
+    \item The extraction of $R_E$ from the collection of electronic measurements is problematic and prone to error
+    \item There is new physics that violates lepton universality.
+\end{itemize}
 
-Alternative determinations of $r_p^2$ are also being investigated at proposed experiments like the MUon Scattering Experiment (\muse) \cite{Mesick:2015gta}, also at PSI, and the Proton Radius experiment (\prad) at Jefferson Lab \cite{Gasparian:2014rna}. 
-\muse will extract the proton charge radius with $\mu-p$ scattering, which will complement the $e-p$ scattering, completing measurements using muons and electrons both for scattering and spectroscopy.
-\prad plans to perform $e-p$ scattering, but with a large acceptance calorimeter as opposed to a traditional magnetic spectrometer method.
-In this experiment, the systematics which dominated previous $e-p$ scattering results are not present, and instead detector efficiencies and angular acceptances are introduces.
-This will give access to the derivative of the form factor for $Q^2$ in the range $\order(10^{-4} - 10^{-2})\textrm{GeV}^2$.
+First, the unknown QCD corrections from hadronic behaviour are investigated in~\cite{Carlson:2015jba}.
+The two-photon interaction between a muon and proton involves two unknown functions and a Wick rotation to extract the amplitudes.
+However, during the Wick rotation, one of the integrals used may not converge, leaving a piece leftover that must be subtracted off that is unknown.
+Limits are placed on this ``subtraction function'' for low $Q^2$, which are not large enough to explain the proton radius; however, it is possible to construct the subtraction function in such a way that one can have a large contribution to the proton radius~\cite{Miller:2012ne}, although usually with the caveat of a large difference in masses between the proton and neutron being introduced.
+
+Alternative determinations of $r_p^2$ are also being investigated at proposed experiments like the MUon Scattering Experiment (\muse) at PSI~\cite{Mesick:2015gta}, and the Proton Radius experiment (\prad) at Jefferson Lab~\cite{Gasparian:2014rna}. 
+\muse will extract the proton charge radius with $\mu\textrm{-}p$ scattering, which will complement the $e\textrm{-}p$ scattering and complete measurements using muons and electrons for both scattering and spectroscopy.
+\prad plans to perform $e\textrm{-}p$ scattering, but with a large acceptance calorimeter as opposed to a traditional magnetic spectrometer method.
+In this experiment, the systematics that dominated previous $e\textrm{-}p$ scattering results are not present, and instead detector efficiencies and angular acceptances are introduced.
+This will give access to the derivative of the form factor for $Q^2$ in the range $\order(10^{-4} - 10^{-2})~\textrm{GeV}^2$.
 
 In this thesis, we focus on the possibility of new physics, however remote this possibility may seem.
 It is useful to note that some models could potentially solve both the proton radius problem and the discrepancy of $(g-2)_\mu$.
-We can use this as a motivation during model building.
-What sort of couplings are permitted by experiment for a certain class of scalar particles?
+We may use this as a motivation during model building.
