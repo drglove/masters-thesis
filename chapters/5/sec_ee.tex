@@ -1,17 +1,17 @@
 \section{Sensitivity Reach of B-factories from $e^+ e^-$ Annihilation}
 For $e^+ e^-$ collisions, we make use of \madgraph again to handle our signal and background estimates.
-Most of what was said about generation of events for the muon events holds here.
+Most of what was said about the generation of events for the muon decay case holds here.
 
-The total integrated luminosities at \belle is taken to be $1040.86fb^{-1}$, with \babar half this, and \belletwo to be expected to have around $100$ times this.
+The total integrated luminosities at \belle is taken to be $1040.86~\textrm{fb}^{-1}$, with \babar at half of this, and \belletwo to be expected to have around $100$ times this.
 All of the \babar and \belle data is already taken and stored.
 This means that an analysis performed by the experiments of the data already taken could cover a large area of the parameter space.
 The large integrated luminosities used will allow very competitive sensitivity limits compared to the other experiments discussed.
-Since the centre of mass energy reaches $10.58\textrm{GeV}$, we can access the $\tau$ leptons here, which in our model have a very strong coupling to the scalar due to their large mass of $1.777\textrm{GeV}$.
-There are two regions of interest in this scenario for the mass of the mediator: below, and above the threshold for the scalar to decay to muons.
-Below this it can only decay to an $e^+ e^-$ pair, so the overall process for $m_\phi < 2m_\mu$ is
+Since the centre-of-mass energy reaches $10.58~\textrm{GeV}$, we can access the $\tau$ leptons here which, in our model have a very strong coupling to the scalar due to their large mass of $1.777~\textrm{GeV}$.
+We are interested in the mediator mass regions that are above and below the threshold for the scalar to decay to muons.
+Below this, it can only decay to an $e^+ e^-$ pair, so the overall process for $m_\phi < 2m_\mu$ is
 
 \begin{equation}
-    e^+ + e^- \rightarrow \tau^+ + \tau^- + e^+ + e^-
+    e^+ + e^- \rightarrow \tau^+ + \tau^- + e^+ + e^-\textrm{,}
 \end{equation}
 
 \noindent while above this threshold we decay almost exclusively to muons,
@@ -21,9 +21,9 @@ Below this it can only decay to an $e^+ e^-$ pair, so the overall process for $m
 \end{equation}
 
 \subsection{Backgrounds}
-Here we simply write down the irreducible SM background process, and let \madgraph run.
+Here we simply write down the irreducible SM background process and let \madgraph run.
 We generate $10,000$ background events for each of the two final states.
-A sample Feynman diagram is shown in Fig.\ \ref{fig:ee_tautaull_SM}.
+A sample Feynman diagram is shown in Fig.~\ref{fig:ee_tautaull_SM}.
 
 \begin{figure}[h]
     \centering
@@ -33,16 +33,16 @@ A sample Feynman diagram is shown in Fig.\ \ref{fig:ee_tautaull_SM}.
 \end{figure}
 
 \subsection{Signal}
-Again, we simply define our process and let \madgraph run akin to the muon decay generation.
-$10,000$ events are generated at each of $20$ mass points from $2m_e$ up to $2m_\mu$, and again from $2m_\mu$ up to $2m_\tau$.
-However we do not go above $2m_\tau$ for simplicity, as this will open the $4\tau$ channel, whose signature does not have the advantage of being a spectrally peaked signal. 
-We enforce that the generation of the scalar is once again on-shell, so our process is really the decay chain below.
+Again, we simply define our process and let \madgraph run, akin to the muon decay generation.
+$10,000$ events are generated at each of the $20$ mass points from $2m_e$ up to $2m_\mu$, and again from $2m_\mu$ up to $2m_\tau$.
+However, we do not go above $2m_\tau$ for simplicity, as this will open the $4\tau$ channel, where the signature does not have the advantage of being a spectrally peaked signal. 
+We enforce that the generation of the scalar is once again on-shell, so our process is really the decay chain below:
 
 \begin{equation}
     e^+ + e^- \rightarrow \tau^+ + \tau^- + \phi,~\phi \rightarrow \ell^+ + \ell^-
 \end{equation}
 
-A sample Feynman diagram for the signal is shown in Fig.\ \ref{fig:ee_tautaull_scalar}.
+A sample Feynman diagram for the signal is shown in Fig.~\ref{fig:ee_tautaull_scalar}.
 
 \begin{figure}[h]
     \centering
@@ -55,37 +55,37 @@ As with the other signals we have examined with an $e^+ e^-$ pair in the final s
 This is only important for masses of the scalar just below the dimuon production threshold.
 
 For our signal, since this is now a collision scenario and not a decay, we must weight our total number of events by the cross section determined by \madgraph.
-The width we have chosen here is also just the energy resolution of the detector listed in the technical design report for \belletwo \cite{Abe:2010gxa} as
+The bin width we have chosen is also just the energy resolution of the detector listed in the technical design report for \belletwo \cite{Abe:2010gxa} as
 
 \begin{equation}
-    \frac{\sigma_E}{E} = \sqrt{\left(\frac{0.066\%}{E}\right)^2 + \left(\frac{0.81\%}{E^{1/4}}\right)^2 + \left(1.34\%\right)^2}
+    \frac{\sigma_E}{E} = \sqrt{\left(\frac{0.066\%}{E}\right)^2 + \left(\frac{0.81\%}{E^{1/4}}\right)^2 + \left(1.34\%\right)^2}\textrm{,}
 \end{equation}
 
 \noindent with $E$ being measured in $\textrm{GeV}$.
 
-One of the more interesting components to this signal, is that we do not need to fully reconstruct both outgoing $\tau$ particles.
+One of the more interesting aspects of this signal is that we do not need to fully reconstruct both outgoing $\tau$ particles.
 It is sufficient that we have one of them decay leptonically, $\tau^- \rightarrow \ell^- \bar{\nu}_\ell \nu_\tau$ (or the conjugate decay), which comes with a total branching fraction $\textrm{BR} = 0.1742 + 0.1783 = 0.3524$ \cite{Agashe:2014kda}.
-For the other $\tau$, we allow all decay modes.
-Thus, our signal really is three charged leptons in the final state, and either hadrons, leptons, or missing energy, with two same flavour oppositely charged leptons reconstructing to the same invariant mass.
-It should be noted that while we currently do not do this, there are known efficiencies for $\tau \rightarrow 4\ell$ that we can use to correctly account for this.
+We allow all decay modes for the other $\tau$.
+Thus, our signal really is three charged leptons in the final state, and either hadrons, leptons, or missing energy, with two same-flavour oppositely-charged leptons reconstructing to the same invariant mass.
+It should be noted that while we currently do not do this, there are known efficiencies for $\tau \rightarrow 4\ell$ that we can use to account for this correctly.
 The cross section found at $m_\phi = 10\textrm{MeV}$ relative to the production of a pair of taus is
 
 \begin{equation}
     \frac{\sigma\left(e^+ e^- \rightarrow \tau^+ \tau^- \phi, m_\phi = 10\textrm{MeV}\right)}{\sigma\left(e^+ e^- \rightarrow \tau^+ \tau^-\right)} = 2.9 \times 10^{-9} \left(\frac{g_{\phi\tau}}{10^{-4}}\right)^2\textrm{.}
 \end{equation}
 
-Additionally, we only introduce a total efficiency of $0.5$ to be safe here, as there should be some acceptance loss distinguishing the lepton from the tau decay with one of the leptons in the pair.
-An acceptance loss could be accepted here because these should be well separated in angular variables.
-We also need to correct for the appropriate scalar coupling, as the one actually of importance in this scenario is the coupling to the tau, so any sensitivity limits set must be scaled down to that of the muon.
+\noindent Additionally, we only introduce a total efficiency of $0.5$ to be safe, as there should be some acceptance loss when  trying to distinguish the lepton produced from the tau decay and one of the leptons in the pair.
+An acceptance loss could be accepted here because these should be well-separated in angular variables.
+We also need to correct for the appropriate scalar coupling, as the one of importance in this scenario is the coupling to the tau, so any sensitivity limits set must be scaled down to that of the muon.
 Finally, we limit our final results to have $m_\phi > 20~\textrm{MeV}$, as a similar search for the dark photon at \babar did not go lower than this \cite{Lees:2014xha}.
 
-Given the above, the full limits are shown in Fig.\ \ref{fig:ee_limits}.
+The full sensitivity limits are presented in Fig.~\ref{fig:ee_limits}.
 A simple analysis at \babar and \belle could already exclude a large portion of the parameter space.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/limits/ee_all}
-    \caption{Scalar limits from $e^+ e^-$ collisions at B-factories. Green, blue, and red represent \babar, \belle, and \belletwo respectively. The muon channel can be seen to turn on, where we remove a small portion of the parameter space due to poor background simulation in the vicinity of the very soft dimuon pair. At this point the $\phi \rightarrow \gamma \gamma$ decay is strongest also, and reduces the sensitivity right before the dimuon channel opens.}
+    \caption{Scalar limits from $e^+ e^-$ collisions at B-factories. Green, blue, and red lines represent \babar, \belle, and \belletwo respectively. The region where the muon channel turns on can be seen, where we remove a small portion of the parameter space due to poor background simulation in the vicinity of the very soft dimuon pair. At this point the $\phi \rightarrow \gamma \gamma$ decay is strongest also, and reduces the sensitivity right before the dimuon channel opens.}
     \label{fig:ee_limits}
 \end{figure}
 
