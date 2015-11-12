@@ -1,6 +1,6 @@
 \section{Extracting Sensitivity Limits}
 \label{sec:limit_procedure}
-In this section, we will detail the precise procedure used to set limits on the various experiments we have analyzed.
+In this section we will detail the precise procedure used to set limits on the various experiments we have analyzed.
 
 For the general case, we must generate the mass distribution for the signal and background processes of interest.
 We can do this by hand for the simpler cases, or using \madgraph to handle the sampling of the amplitudes for us.
@@ -11,19 +11,19 @@ Many fewer events are generated than the number of actual events expected to be 
 This is due to the amount of computing time required to sample events.
 With our current resources, generating $10,000$ takes on the order of $15$ minutes, while we expect $10^{10}$ events or more in some cases.
 Clearly, we must then sample for a smaller number of events, and then scale up our results to the appropriate luminosity or number of total decays expected.
-This has an effect when using \madgraph to sample regions of the parameter space that are suppressed, especially near the tails of the background distributions, where only 1 or 0 events will be seen.
-Scaling these regions is then not straightforward, however it is still the case that any signal in the tails of background distributions must be relatively easy to spot.
+This has an effect when using \madgraph to sample regions of the parameter space that are suppressed, especially near the tails of the background distributions, where only 0 or 1 events will be seen.
+Scaling these regions is hence not straightforward, however it is still the case that any signal in the tails of background distributions must be relatively easy to spot.
 
-Note that because we are only predicting an expected limit for the experiments, we will likely err on the optimistic side of number of signal events.
+Note that because we are only predicting an expected limit for the experiments, we will likely err on the optimistic side for the number of signal events.
 However, if one were to actually look at the data from the experiments, the limit setting procedure must be precisely defined and all applicable efficiencies and backgrounds taken into account.
 This is best done by experimental collaborations.
 
 For our scalar model, all processes of interest scale as $g_{\phi\ell}^2$.
-If we overlay the binned signal and the binned background, we can look for the location of a bump, due to the resonant production of the scalar propagator going on-shell.
-Scaling the strength of the signal by tuning $g_{\phi\ell}$ until we can statistically claim the bump is discoverable, yields a limit on the coupling constant for that choice of $m_\phi$.
+If we overlay the binned signal and the binned background, we can look for the location of a bump due to the resonant production of the scalar propagator going on-shell.
+Scaling the strength of the signal by tuning $g_{\phi\ell}$ until we can claim the bump is statistically significant yields a limit on the coupling constant for that choice of $m_\phi$.
 Assuming Poisson statistics in each bin, we choose our limit such that the signal is a $3\sigma$ effect; {\em i.e.}\ $S = 3\sqrt{B}$ with $S$ being the number of signal events and $B$ being the number of background events.
 
 We can use the fact that we know how the signal scales with our coupling when generating events with \madgraph.
-To produce events computationally at a faster rate, we set the coupling to $1$, since it will be rescaled later when taking the limit.
+To produce events at a faster computational rate, we set the coupling to $1$ since it will be rescaled later when taking the limit.
 Reducing the coupling strength to a more reasonable value, such as $10^{-4}$, will drastically increase the time taken to generate signal events.
 This is akin to having a very small allowable phase space when sampling with Monte Carlo.

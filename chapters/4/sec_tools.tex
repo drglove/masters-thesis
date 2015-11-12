@@ -2,36 +2,37 @@
 
 In order to understand the limits we want to impose on the parameters of our model, we must generate decay (or collision) events corresponding to each process which contributes to the final state.
 This also requires that we simulate appropriate background processes which can masquerade as signal.
-To achieve this, one has to integrate the square of the sum of each matrix element.
-In some cases, such as kaon decay which we will compute later, this is possible to do by hand, at least in some approximation.
+To achieve this, one has to integrate the square of the sum of each matrix element for a given process.
+In some cases, such as kaon decay which we will compute later, this is possible to do by hand, at least to some approximation.
 However, while the matrix elements are easy to write down, usually these processes can be quite tedious and very difficult to integrate.
 For these cases, we will make use of \emph{event generators}, which effectively sample the allowed phase space of the matrix elements by Monte-Carlo in order to perform the integration.
 
 Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{Mertig:1990an}, and \mgamcnlo \cite{Alwall:2011uj,Alwall:2014hca}.
-\feynrules allows one to easily write down a Lagrangian, and generate the Feynman rules dynamically.
+\feynrules allows one to easily write down a Lagrangian and generate the Feynman rules dynamically.
 For our purposes, the Feynman rules are easily seen directly from the Lagrangian.
 However, the advantage of using \feynrules is that the output follows the Universal FeynRules Output (UFO) \cite{Degrande:2011ua}, and defining the model involves only writing some rather simple \mathematica code.
 The UFO defines a portable format for a model, allowing multiple event generators to utilize its output.
-Most important is that \madgraph can utilize the resulting model simply by putting the UFO model within the appropriate location within \madgraph.
+\madgraph can utilize the resulting model simply by putting the UFO model into the appropriate location within \madgraph.
 \feyncalc is useful when assisting computations by hand, which is ultimately used for computing traces of many $\gamma$ matrices.
 
-There are other tools that could further improve our limits which were not used: these include \pythia \cite{Sjostrand:2007gs}, which would handle the hard event generation instead of the generator provided by \madgraph, hadronization (which is not likely to be of use), initial and final state radiation; and \delphes \cite{Selvaggi:2014mya}, providing a proper detector simulation at a level that is not as demanding as \geant \cite{Agostinelli:2002hh}. For our purposes of simply estimating limits, these are for the most part not necessary.
+There are other tools that could further improve our limits which were not used.
+These include \pythia \cite{Sjostrand:2007gs}, which would handle the hard event generation in place of \madgraph, hadronization (which is not likely to be of use here), initial and final state radiation; and \delphes \cite{Selvaggi:2014mya}, providing a proper detector simulation at a level that is not as demanding as \geant \cite{Agostinelli:2002hh}. For our purposes of simply estimating limits, these are for the most part not necessary.
 
 \subsection{\feynrules}
 \feynrules was developed as a toolkit to define new fields, write down a given model's Lagrangian, and automatically compute the Feynman rules.
-The only requirements of the model are that the Lagrangian satisfy locality, Lorentz, and Gauge invariance, and allowable fields have spin 0, 1/2, 1, 3/2, or 2. The Lagrangian need not be an extension of the Standard Model, but simply any quantum field theory obeying the above requirements. 
-It also will analytically compute simple decay widths for $1 \rightarrow 2$ processes, and branching ratios.
+The only requirements of the model are that the Lagrangian satisfy locality as well as Lorentz and Gauge invariance, and allowable fields have spin 0, 1/2, 1, 3/2, or 2. The Lagrangian need not be an extension of the Standard Model, but simply any quantum field theory obeying the above requirements. 
+\feynrules will also analytically compute simple decay widths for $1 \rightarrow 2$ processes and branching ratios.
 This toolkit works as a \mathematica package.
 
-Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields, and request the Feynman rules be calculated and output to the UFO format, with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the Standard Model Lagrangian already, so we simply need to append our new Lagrangian to this built-in one.
-At the same time, we have \feynrules calculate the decay widths of each new particle, and update the model file with these using the calls to \texttt{vertices = FeynmanRules[L]}, \texttt{decays = ComputeWidths[vertices]}, and \texttt{UpdateWidths[decays]}.
+Within a \mathematica notebook, we simply write down the Lagrangian in terms of the fields and request that the Feynman rules be calculated and written in the UFO format with the \texttt{WriteUFO[L + LSM]} command. Note that \feynrules contains the SM Lagrangian already, so we simply need to append our new Lagrangian to this built-in one.
+At the same time we have \feynrules calculate the decay widths of each new particle, and update the model file with these using the calls \texttt{vertices = FeynmanRules[L]}, \texttt{decays = ComputeWidths[vertices]}, and \texttt{UpdateWidths[decays]}.
 
-Our model files for both the scalar and dark photon models are included in the appendix \ref{app:model_files} and are the only input into the generation of our events, besides the definition of the process of interest.
+Our model files for both the scalar and dark photon models are included in appendix~\ref{app:model_files}, and are the only input into the generation of our events besides the definition of the process of interest.
 
 \subsection{\feyncalc}
 Only used minimally in this thesis, \feyncalc provides a quick sanity check for calculations done by hand.
-We have used \feyncalc in our calculation of $K^+$ decay with new physics, although this channel is doable by hand.
-It is useful in two senses. Primarily, it computes the traces of many $\gamma$ matrices.
+We have used \feyncalc in our calculation of $K^+$ decays with new physics, although this channel is doable by hand.
+It is useful in two senses; primarily, it computes the traces of many $\gamma$ matrices.
 For our purposes, a trace of only up to 6 $\gamma$ matrices appeared (both with and without a $\gamma^5$ component).
 However, one can also start from the amplitude as written with spinors, and \feyncalc can automatically write down the spin-averaged amplitude after taking the traces.
 
@@ -39,17 +40,17 @@ However, one can also start from the amplitude as written with spinors, and \fey
 \madgraph is the largest component and most used tool of this thesis.
 It provides the framework for:
 \begin{itemize}
-    \item Importing both the SM, and new physics models as provided by tools such as \feynrules in the UFO format
+    \item Importing both the SM and new physics models as provided by tools such as \feynrules in the UFO format
     \item Defining processes of interest, such as $e^+ e^- \rightarrow \mu^+ \mu^- \mu^+ \mu^-$
     \item Producing Feynman diagrams for the process automatically using the Feynman rules defined by the model
     \item Generating events by sampling the amplitude using a Monte-Carlo technique
 \end{itemize}
 
-Note that while usually used for collider scenarios where the physics object of interest is the cross-section, it is also possible to use \madgraph to compute partial decay widths.
+Note that while \madgraph is usually used for collider scenarios where the physics object of interest is the cross-section, it is also possible to use it to compute partial decay widths.
 This is useful when there are more than three decay products in the final state.
 For two decay products, the derivation of the decay width is trivial.
-When one moves to three decay products, the final state integration can become tricky, but with a change of variables to any of the two invariant mass pairs, the integration can usually be done analytically, or at least numerically.
-This change of variables is usually used in the so-called ``Dalitz plots,'' where the phase space can be more easily visualized \cite{Agashe:2014kda}.
+When one moves to three decay products, the final state integration may become tricky, but with a change of variables to any of the two invariant mass pairs, the integration can usually be done analytically, or at least numerically.
+This change of variables is usually used in so-called ``Dalitz plots,'' where the phase space can be more easily visualized \cite{Agashe:2014kda}.
 Beyond three decay products, the final state integration becomes increasingly difficult, and this is where we put \madgraph to use.
 Note that it is possible to extend Dalitz plots to four-body decays, but this is outside the scope of this thesis \cite{2007JPhB...40.3091S}.
 
@@ -75,19 +76,19 @@ This also allows efficient generation as common sub-processes within a diagram c
 
 Finally, the Monte-Carlo integration takes place, where the objective is to integrate the square of each combination of helicity amplitudes.
 \madgraph is composed of a few distinct tools, the most important of which is \madevent.
-\madevent is one of a few programs included in \madgraph which can sample a generated amplitude using Monte-Carlo.
+\madevent is one of a few programs included in \madgraph that can sample a generated amplitude using Monte-Carlo.
 Other Monte-Carlo integrators could be used instead, such as \pythia, however \madevent comes bundled with \madgraph.
 The parameters that one can tune for the generation of events falls under two files, labelled cards: \texttt{param\_card}, and \texttt{run\_card}.
-The \texttt{param\_card} controls physics parameters, such as the mass of various particles, and their couplings, both for the SM and any new physics models.
-\texttt{run\_card} controls parameters related to the experiment, such as the energies of the particles being collided, which parton distribution functions to use if needed, and any relevant cuts to make at generation time, among other options.
+The \texttt{param\_card} controls physics parameters, such as the mass of various particles and their couplings, both for the SM and any new physics models.
+\texttt{run\_card} controls parameters related to the experiment, such as the energies of the particles being collided, which parton distribution functions to use, and any relevant cuts to make at generation time.
 
 By changing the physics parameters for our new model, we can scan the parameter space allowed.
 For our purposes, the scaling of the relevant cross-sections and partial decay widths with the coupling $g_{\phi\ell}$ is straightforward.
-This is not the case with the mass of the $\phi$, and we have written a Python package which can generate \madgraph output as it scans across the mass regime of interest.
+This is not the case with the mass of the scalar, and we have written a Python package that can generate \madgraph output as it scans across the mass regime of interest.
 
-The output is a metadata file containing the appropriate inputs, such as the \texttt{run\_card}, \texttt{param\_card}, model information, which process is generated, and the resulting partial decay width or cross-section.
+The output is a metadata file containing the appropriate inputs, such as the \texttt{run\_card}, \texttt{param\_card}, model information, generated processes, and the resulting partial decay width or cross-section.
 Also included is an XML-like file containing all the events generated by \madgraph.
 This output follows the Les Houches Event file format\cite{Alwall:2006yp}, which acts as a standard way of representing particle decay/collision events.
-Each event entry contains the particle ID, the mother particle if it is a decay product, the colour(s), the four-momentum, mass, proper lifetime, and spin, among a few other fields not of relevance here.
+Each event entry contains a list of particles, and for each particle we are given the particle ID, the mother particle if it is a decay product, the colour(s), four-momentum, mass, proper lifetime, and spin, among a few other quantities not of relevance here.
 The XML-like structure translates nicely into a Mathematica style table.
 To import the events into Mathematica for analysis, a Mathematica package developed by Maxim Perlstein and Andi Weiler is used.
