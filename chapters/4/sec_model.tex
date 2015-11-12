@@ -84,41 +84,66 @@ With this model, the partial decay widths of the $\phi$ to pairs of leptons goes
     \Gamma_{\phi \rightarrow \ell^+ \ell^-} = \frac{1}{8\pi^2} g_{\phi\ell}^2 m_\phi \left(1-\frac{4m_\ell^2}{m_\phi^2}\right)^{\frac{3}{2}}\textrm{.}
 \end{equation}
 
-If we examine the decay length to electrons, for masses of the mediator much larger than the electron, we find
-
-\begin{equation}
-    c \tau_{\phi \rightarrow e^+ e^-} \approx 0.16\textrm{mm} \left(\frac{10^{-4}}{g_{\phi e}}\right)^2 \frac{10\textrm{MeV}}{m_\phi}\textrm{.}
-\end{equation}
-
-\noindent The decay length is plotted in Fig.\ \ref{fig:ctau_phiee}.
+Loop induced diagrams also allow the production of a pair of photons, $\phi \rightarrow \gamma \gamma$, which is computed with the diagram in Fig.\ \ref{fig:phi_gammagamma_loop}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.6\textwidth]{Figures/misc/ctau_phiee}
-    \caption{The typical decay length of the scalar $\phi$, when electrons are the only lepton accessible. The strength of the coupling between $\phi$ and the electron is taken to be $g_{\phi e} = 10^{-4}$.}
-    \label{fig:ctau_phiee}
+    \includegraphics[width = 0.6\textwidth]{Figures/feynman_diagrams/phi_gammagamma}
+    \caption{Loop diagram for $\phi \rightarrow \gamma \gamma$, mediated by an exchange of leptons.}
+    \label{fig:phi_gammagamma_loop}
 \end{figure}
+
+\noindent This production has a small branching ratio, except for masses of the scalar near the production threshold for a pair of muons of taus.
+Since $\phi$ is Higgs-like, we can make use of the known results for $\Gamma\left(H \rightarrow \gamma \gamma\right)$ in \cite{Djouadi:2005gi}, and simply rescale the result to match our scalar.
+Doing this yields
+
+\begin{equation}
+    \Gamma\left(\phi \rightarrow \gamma \gamma\right) = \frac{\alpha^2}{256 \pi^3} \frac{m_\phi^3}{m_\mu^2} g_{\phi \mu}^2 \left( \sum_{\ell = \mu, \tau} \frac{2}{x_\ell^2}\left( x_\ell + (x_\ell-1) \arcsin^2\left( \sqrt{x_\ell} \right) \right) \theta(1-x) \right)^2
+\end{equation}
+
+\noindent where $x_\ell = m_\phi^2 / 4 m_\ell^2$, and $\theta(x)$ is the Heaviside step function.
+We do not take into account the resonant production of the leptons appearing in the diagram, hence the lack of electrons appearing in the sum, and the Heaviside function appearing to turn off the contribution above the resonant production threshold.
+At low masses of the $\phi$, the contribution from both the muon and tau loop are identical, as we couple stronger to the more massive tau in such a way that both cases are identical.
+This correction is small in this region, compared to the partial width of $\phi \rightarrow e^+ e^-$.
+However, near $m_\phi = 2m_\mu$, this process can have a branching ratio up to $30\%$.
+This is taken into account in our analysis by simply scaling the number of signal events by the correct branching ratio.
+It is possible to take this production of photons into account as a source of signal, and to include the appropriate backgrounds, but this is outside the scope of this work.
 
 The largest implication of this decay width for us, is the relative partial widths between muons and electrons as the decay products.
 Once the muon channel opens up, {\em i.e.}\ when $m_\phi > 2 m_\mu \gg 2 m_e$, and taking the total width to only have contributions from the $e^+ e^-$ and $\mu^+ \mu^-$ channels, we have that
 
 \begin{align}
-    \textrm{BR}(\phi \rightarrow \mu^+ \mu^-) &= \frac{1}{1+\frac{\Gamma\left(\phi \rightarrow e^+ e^-\right)}{\Gamma\left(\phi \rightarrow \mu^+ \mu^-\right)}} \\
+    \textrm{BR}(\phi \rightarrow \mu^+ \mu^-) &\approx \frac{1}{1+\frac{\Gamma\left(\phi \rightarrow e^+ e^-\right)}{\Gamma\left(\phi \rightarrow \mu^+ \mu^-\right)}} \\
     \frac{\Gamma_{\phi \rightarrow e^+ e^-}}{\Gamma_{\phi \rightarrow \mu^+ \mu^-}} &\approx \frac{m_e^2}{m_\mu^2}\left(1-\frac{4m_\mu^2}{m_\phi^2}\right)^{-\frac{3}{2}}\textrm{.}
 \end{align}
 
 \noindent Due to the suppression from the leading $m_e^2/m_\mu^2$ term, once the decay to muons is kinematically accessible due to the large mass of the $\phi$, one can effectively neglect the branching ratio to the electrons and take $\textrm{BR}(\phi \rightarrow \mu^+ \mu^-) \approx 1$.
-A plot of the branching ratio to a dimuon pair is shown in Fig.\ \ref{fig:br_phimumu}.
+A plot of the branching ratio to a dimuon pair is shown in Fig.\ \ref{fig:br_phi}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.6\textwidth]{Figures/misc/br_phimumu}
-    \caption{Typical branching ratios of the scalar $\phi$ to a dimuon pair. Here we have taken the coupling strength between the muon and the scalar to be $g_{\phi \mu} = 10^{-4}$. Going slightly above the threshold mass to produce pairs of muons gives a branching ratio of $1$ almost immediately.}
-    \label{fig:br_phimumu}
+    \includegraphics[width = 0.6\textwidth]{Figures/misc/br_phi}
+    \caption{Branching ratios of the scalar $\phi$ to pairs of leptons, or to a pair of photons. Blue corresponds to $\phi \rightarrow e^+ e^-$, green to $\phi \rightarrow \mu^+ \mu^-$, red to $\phi \rightarrow \tau^+ \tau^-$, and orange to $\phi \rightarrow \gamma \gamma$. Going slightly above the threshold mass to produce pairs of muons gives a branching ratio of $1$ almost immediately. Note the contribution from the loop induced production of photons is appreciable just to the left of $m_\phi = 2 m_\mu$.}
+    \label{fig:br_phi}
 \end{figure}
 
-\noindent This has the consequence of allowing us to estimate sensitivity limits in an easier fashion, as we need only take into account the electron decay channel until the muon is accessible where it dominates, and similarly for the tau.
+This has the consequence of allowing us to estimate sensitivity limits in an easier fashion, as we need only take into account the electron decay channel and photon production channel, until the muon is accessible where it dominates, and similarly for the tau.
 In all of our cases, we will be taking the $\phi$ to be produced on-shell before decaying to an $\ell^+ \ell^-$ pair promptly, as the width of the scalar as given above is very small, and the branching ratio to the most massive pair of leptons is very close to $1$.
+
+If we examine the decay length, where the electron is the only accessible lepton and for masses of the mediator much larger than the electron, we find
+
+\begin{equation}
+    c \tau_{\phi \rightarrow e^+ e^-} \approx 0.16\textrm{mm} \left(\frac{10^{-4}}{g_{\phi e}}\right)^2 \frac{10\textrm{MeV}}{m_\phi}\textrm{.}
+\end{equation}
+
+\noindent The decay length is plotted in Fig.\ \ref{fig:ctau_phi}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.6\textwidth]{Figures/misc/ctau_phi}
+    \caption{The typical decay length of the scalar $\phi$. The strength of the coupling between $\phi$ and the electron is taken to be $g_{\phi e} = 10^{-4}$. One can see the different decay modes turn on, at the $2 m_\mu$ and $2 m_\tau$ thresholds, while the effects due to the loop diagram $\phi \rightarrow \gamma \gamma$ do not have a sizable impact on the decay length.}
+    \label{fig:ctau_phi}
+\end{figure}
 
 Of most importance is the relative magnitude of couplings.
 We would like a weak coupling to electrons such that we do not disturb the proton radius as extracted in the electron-proton scattering experiments, and measurement of the atomic energy levels of electronic Hydrogen.
