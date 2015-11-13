@@ -21,7 +21,7 @@ A large irreducible background for the experiment is
 \noindent which comes with a branching ratio of $3.4 \times 10^{-5}$ \cite{Agashe:2014kda}. 
 This is due to an internal conversion of muon to electron with a weak vertex, just like an ordinary muon decay (also known as a Michel decay.)
 To remove this background process, momentum conservation can be applied provided that the energy resolution is small enough.
-For \mueee, a total energy resolution of $\sigma_E < 1\textrm{MeV}$ is sufficient for sensitivity of branching ratios down to $10^{-15}$ \cite{Blondel:2013ia}.
+For \mueee, a total energy resolution of $\sigma_E < 1~\textrm{MeV}$ is sufficient for sensitivity of branching ratios down to $10^{-15}$ \cite{Blondel:2013ia}.
 One such diagram for this process is shown in Fig.\ \ref{fig:mu_eeenunu_SM}.
 
 \begin{figure}[h]
@@ -39,7 +39,7 @@ Another source of background for the experiment is the radiative muon decay
 \end{equation}
 
 \noindent where the $\gamma$ radiates off of either the muon or electron.
-This process comes with a branching ratio of $1.4 \times 10^{-2}$, given a photon energy larger than $10\textrm{MeV}$ \cite{Agashe:2014kda}.
+This process comes with a branching ratio of $1.4 \times 10^{-2}$, given a photon energy larger than $10~\textrm{MeV}$ \cite{Agashe:2014kda}.
 The photon can then convert to an $e^+ e^-$ pair in the detector or target material and mimic the irreducible background above.
 Conversions outside of the target can be suppressed if the vertex can be readily identified.
 This conversion process will be a much more important source of background for the low mass range of the scalar, as the $e^+ e^-$ pair from the converted photon will be highly collimated for all but the lowest photon energies.
@@ -55,7 +55,7 @@ It is expected that the pion contamination is on the order of $10^{-12}$ for the
 Using \madgraph, we generate $200,000$ events corresponding to the SM background for our signal, $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$.
 We use such a high amount to have properly populated bins near the tails of the distribution, where the likelihood that a bin will be populated is small.
 To improve the time required to generate the events, we ignore contributions from the Higgs and the $Z$ bosons, as they will not contribute at energies associated with muon decay.
-As a cross-check, the total width we obtain from the SM process is $1.239\times 10^{-23}\textrm{GeV}$, yielding a branching ratio of $4.119\times 10^{-5}$, which is within errors of the PDG value of $(3.4 \pm 0.4) \times 10^{-5}$ \cite{Agashe:2014kda}.
+As a cross-check, the total width we obtain from the SM process is $1.239\times 10^{-23}~\textrm{GeV}$, yielding a branching ratio of $4.119\times 10^{-5}$, which is within errors of the PDG value of $(3.4 \pm 0.4) \times 10^{-5}$ \cite{Agashe:2014kda}.
 
 \subsection{Signal}
 The signal we are interested in is the spectral feature over the irreducible background present in \mueee.
@@ -81,7 +81,7 @@ Note that while we generate events with the scalar radiating off of either the d
     \label{fig:mu_eeenunu_scalar}
 \end{figure}
 
-We generate events at $10,000$ events at 200 different mass points, logarithmically spaced from $1.1\textrm{MeV}$, slightly higher than $2m_e$, up to $100\textrm{MeV}$, slightly lower than $m_\mu$.
+We generate events at $10,000$ events at 200 different mass points, logarithmically spaced from $1.1~\textrm{MeV}$, slightly higher than $2m_e$, up to $100~\textrm{MeV}$, slightly lower than $m_\mu$.
 It's worth briefly noting here that \madgraph does not natively support scanning over a parameter, such as the mass of the mediator.
 To get around this, we have written a wrapper around \madgraph in \texttt{Python}, which will directly interface with the \madgraph calls and can automatically run the generator over any parameter scan, with minimal overhead.
 For all runs, the coupling to the muon and scalar is set at $g_{\phi\mu} = 0.1$, and will be rescaled later to determine the limiting value.
@@ -91,7 +91,7 @@ The results of generating these events are twofold:
 \begin{itemize}
     \item{The total width of the process is given, which we can use to rescale the events. For example,
         \begin{equation}
-            \Gamma(m_\phi \approx 21\textrm{MeV}) = 1.3\times 10^{-11}~\Gamma(\mu^+ \rightarrow \textrm{all}) \left(\frac{g_{\phi\mu}}{10^{-4}}\right)^2\textrm{.}
+            \Gamma(m_\phi \approx 21~\textrm{MeV}) = 1.3\times 10^{-11}~\Gamma(\mu^+ \rightarrow \textrm{all}) \left(\frac{g_{\phi\mu}}{10^{-4}}\right)^2\textrm{.}
         \end{equation}
         \madgraph tallies this partial width for us. This will capture the overall behaviour of our signal, corresponding to the total number of raw signal events all placed into one bin.}
     \item{A collection of events with the four-momentum for each particle, and their parents if they are a decay product are output by the program. We can use these to plot the spectrum of the decay products.}
@@ -148,7 +148,7 @@ The resulting sensitivity limits are shown in Fig.\ \ref{fig:mu3e_limits}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/limits/mu3e_all}
-    \caption[Sensitivity limits on the scalar coupling to muon using $\mu^+$ decay at \mueee.]{Sensitivity limits on the scalar coupling to muon using $\mu^+$ decay at \mueee. Results using our background simulation are shown as solid lines, while results translated using Echenard et.\ al.\ are shown as dashed lines \cite{Echenard:2014lma}. In blue are the phase I limits, and in red are the phase II limits. The dark photon results should have a more robust background and detector simulation than our simple treatment. Our background simulation allows for sensitivity limits lower than $10\textrm{MeV}$, however the resolution of the invariant mass of the $e^+ e^-$ pair is relatively unknown here, so we limit ourselves to $m_\phi > 10~\textrm{MeV}$.} 
+    \caption[Sensitivity limits on the scalar coupling to muon using $\mu^+$ decay at \mueee.]{Sensitivity limits on the scalar coupling to muon using $\mu^+$ decay at \mueee. Results using our background simulation are shown as solid lines, while results translated using Echenard et.\ al.\ are shown as dashed lines \cite{Echenard:2014lma}. In blue are the phase I limits, and in red are the phase II limits. The dark photon results should have a more robust background and detector simulation than our simple treatment. Our background simulation allows for sensitivity limits lower than $10~\textrm{MeV}$, however the resolution of the invariant mass of the $e^+ e^-$ pair is relatively unknown here, so we limit ourselves to $m_\phi > 10~\textrm{MeV}$.} 
     \label{fig:mu3e_limits}
 \end{figure}
 
@@ -170,7 +170,7 @@ Doing this, we find the following result:
 \noindent In this expression, the branching ratios and $\epsilon^\textrm{limit}$ are all a function of mass, with the branching ratios coming from our simulation and the limiting kinetic mixing from~\cite{Echenard:2014lma}.
 The resulting limits can be seen in Fig.~\ref{fig:mu3e_limits}.
 
-Comparing the results of the two methods, the plateauing behaviour towards low mass mediators is more likely correct than our treatment of a fixed mass resolution below $10\textrm{MeV}$.
+Comparing the results of the two methods, the plateauing behaviour towards low mass mediators is more likely correct than our treatment of a fixed mass resolution below $10~\textrm{MeV}$.
 As expected, our results are more optimistic.
 This is likely because we are not taking into account detector efficiencies, which will degrade the signal sensitivity towards the lower masses.
 Nonetheless, the agreement everywhere towards the higher mass end suggests that our simulation is robust enough while also being relatively simple in concept.
