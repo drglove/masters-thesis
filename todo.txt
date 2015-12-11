@@ -1,2 +1,0 @@
-1. Export Mathematica curves to .dat file of coordinates, and replot in GnuPlot for pretty looking plots
-2. Add efficiencies for Mu3e curves
