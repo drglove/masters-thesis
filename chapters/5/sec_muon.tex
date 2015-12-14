@@ -5,7 +5,8 @@ The SM has many avenues to produce such a signal with missing energy through muo
 Since the experiment consists of many muons stopped in a target, it can be expected that there will be many events that behave like a muon decay and have missing energy.
 Our signal will overlap with the backgrounds present and \mueee, and will allow us to study the signal component of $\mu^+ \rightarrow e^+ \bar{\nu}_\mu \nu_e e^+ e^-$.
 
-For this experiment, we have utilized \madgraph to do the final state integration, as our signal will have four particles in the final state and this is difficult to do by hand.
+For this experiment, we have utilized \madgraph to do the final state integration, as our signal will have five particles in the final state.
+Although only four must be integrated over as the $\phi$ is produced on-shell, this integration is difficult to do by hand.
 Furthermore, even though we will be looking at a four body decay, the scalar particle will be on-shell and decay later to an $e^+ e^-$ pair, and \madgraph will also take care of generating the events corresponding to this decay.
 All of the diagrams that \madgraph generates are available in appendix \ref{app:muon_diagrams}.
 
@@ -159,7 +160,7 @@ This removes any need for us to do background simulation for this case.
 In order to translate their limits from the dark photon case to the scalar case, we must do a simple simulation of the dark photon signal ourselves.
 Using the dark photon model developed earlier for \madgraph, we perform the same generation of events as outlined for the scalar.
 We set the dark photon kinetic mixing to $\epsilon = 0.1$, and generate signal events over the same 200 mass points.
-Equating the number of signal events between the two models for the given limiting $\epsilon$ and an unknown limiting $g_{\phi\mu}$, let us translate the limits, since the number of events detected for sensitivity must be the same.
+Equating the number of signal events between the two models for the given limiting $\epsilon$ and an unknown limiting $g_{\phi\mu}$, lets us translate the limits, since the number of events detected for sensitivity must be the same.
 Doing this, we find the following result:
 
 \begin{equation}

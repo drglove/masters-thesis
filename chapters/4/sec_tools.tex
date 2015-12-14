@@ -5,7 +5,7 @@ This also requires that we simulate appropriate background processes which can m
 To achieve this, one has to integrate the square of the sum of each matrix element for a given process.
 In some cases, such as kaon decay which we will compute later, this is possible to do by hand, at least to some approximation.
 However, while the matrix elements are easy to write down, usually these processes can be quite tedious and very difficult to integrate.
-For these cases, we will make use of \emph{event generators}, which effectively sample the allowed phase space of the matrix elements by Monte-Carlo in order to perform the integration.
+For these cases, we will make use of \emph{event generators}, which effectively sample the allowed phase space of the matrix elements by Monte Carlo in order to perform the integration.
 
 Our primary tools we use are \feynrules \cite{Alloul:2013bka}, \feyncalc \cite{Mertig:1990an}, and \mgamcnlo \cite{Alwall:2011uj,Alwall:2014hca}.
 \feynrules allows one to easily write down a Lagrangian and generate the Feynman rules dynamically.
@@ -32,9 +32,9 @@ Our model files for both the scalar and dark photon models are included in appen
 \subsection{\feyncalc}
 Only used minimally in this thesis, \feyncalc provides a quick sanity check for calculations done by hand.
 We have used \feyncalc in our calculation of $K^+$ decays with new physics, although this channel is doable by hand.
-It is useful in two senses; primarily, it computes the traces of many $\gamma$ matrices.
+It is useful in two ways: first, it computes the traces of many $\gamma$ matrices.
 For our purposes, a trace of only up to 6 $\gamma$ matrices appeared (both with and without a $\gamma^5$ component).
-However, one can also start from the amplitude as written with spinors, and \feyncalc can automatically write down the spin-averaged amplitude after taking the traces.
+Second, one can also start from the amplitude as written with spinors, and \feyncalc can automatically write down the spin-averaged amplitude after taking the traces.
 
 \subsection{\madgraph}
 \madgraph is the largest component and most used tool of this thesis.
@@ -43,7 +43,7 @@ It provides the framework for:
     \item Importing both the SM and new physics models as provided by tools such as \feynrules in the UFO format
     \item Defining processes of interest, such as $e^+ e^- \rightarrow \mu^+ \mu^- \mu^+ \mu^-$
     \item Producing Feynman diagrams for the process automatically using the Feynman rules defined by the model
-    \item Generating events by sampling the amplitude using a Monte-Carlo technique
+    \item Generating events by sampling the amplitude using a Monte Carlo technique
 \end{itemize}
 
 Note that while \madgraph is usually used for collider scenarios where the physics object of interest is the cross-section, it is also possible to use it to compute partial decay widths.
@@ -74,10 +74,10 @@ This is done using helicity amplitudes.
 Each external leg gets assigned a wavefunction, and is combined using the appropriate propagator until the final combination step gives the resulting helicity amplitude for that particular diagram.
 This also allows efficient generation as common sub-processes within a diagram can be reused across all Feynman diagrams.
 
-Finally, the Monte-Carlo integration takes place, where the objective is to integrate the square of each combination of helicity amplitudes.
+Finally, the Monte Carlo integration takes place, where the objective is to integrate the square of each combination of helicity amplitudes.
 \madgraph is composed of a few distinct tools, the most important of which is \madevent.
-\madevent is one of a few programs included in \madgraph that can sample a generated amplitude using Monte-Carlo.
-Other Monte-Carlo integrators could be used instead, such as \pythia, however \madevent comes bundled with \madgraph.
+\madevent is one of a few programs included in \madgraph that can sample a generated amplitude using Monte Carlo.
+Other Monte Carlo integrators could be used instead, such as \pythia, however \madevent comes bundled with \madgraph.
 The parameters that one can tune for the generation of events falls under two files, labelled cards: \texttt{param\_card}, and \texttt{run\_card}.
 The \texttt{param\_card} controls physics parameters, such as the mass of various particles and their couplings, both for the SM and any new physics models.
 \texttt{run\_card} controls parameters related to the experiment, such as the energies of the particles being collided, which parton distribution functions to use, and any relevant cuts to make at generation time.
@@ -86,9 +86,9 @@ By changing the physics parameters for our new model, we can scan the parameter 
 For our purposes, the scaling of the relevant cross-sections and partial decay widths with the coupling $g_{\phi\ell}$ is straightforward.
 This is not the case with the mass of the scalar, and we have written a Python package that can generate \madgraph output as it scans across the mass regime of interest.
 
-The output is a metadata file containing the appropriate inputs, such as the \texttt{run\_card}, \texttt{param\_card}, model information, generated processes, and the resulting partial decay width or cross-section.
+The output of the Python package is a metadata file containing the appropriate inputs to \madgraph, such as the \texttt{run\_card}, \texttt{param\_card}, model information, generated processes, and the resulting partial decay width or cross-section.
 Also included is an XML-like file containing all the events generated by \madgraph.
 This output follows the Les Houches Event file format\cite{Alwall:2006yp}, which acts as a standard way of representing particle decay/collision events.
-Each event entry contains a list of particles, and for each particle we are given the particle ID, the mother particle if it is a decay product, the colour(s), four-momentum, mass, proper lifetime, and spin, among a few other quantities not of relevance here.
-The XML-like structure translates nicely into a Mathematica style table.
-To import the events into Mathematica for analysis, a Mathematica package developed by Maxim Perlstein and Andi Weiler is used.
+Each event entry contains a list of particles, and for each particle we are given the particle ID, the mother particle if it is a decay product, the colour(s), four-momentum, mass, proper lifetime, and spin, and a few other quantities not of relevance here.
+The XML-like structure translates nicely into a \mathematica style table.
+To import the events into \mathematica for analysis, a \mathematica package developed by Maxim Perlstein and Andi Weiler is used.
